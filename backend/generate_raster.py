@@ -31,9 +31,23 @@ except ImportError:
 # Paths
 # ---------------------------------------------------------------------------
 PROJECT_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-RASTER_DIR   = os.path.join(PROJECT_ROOT, 'data', 'raw', 'rasters')
-MODEL_PATH   = os.path.join(PROJECT_ROOT, 'models', 'output', 'trained_model.pkl')
-OUTPUT_DIR   = os.path.join(PROJECT_ROOT, 'outputs', 'rasters')
+RAW_RASTER_DIR = os.path.join(PROJECT_ROOT, 'data', 'raw', 'rasters')
+MODEL_PATH     = os.path.join(PROJECT_ROOT, 'models', 'output', 'trained_model.pkl')
+OUTPUT_DIR     = os.path.join(PROJECT_ROOT, 'outputs', 'rasters')
+
+
+def _has_tifs(path):
+    return os.path.isdir(path) and any(
+        name.lower().endswith('.tif') for name in os.listdir(path)
+    )
+
+
+def _input_raster_dir():
+    if _has_tifs(RAW_RASTER_DIR):
+        return RAW_RASTER_DIR
+    if _has_tifs(OUTPUT_DIR):
+        return OUTPUT_DIR
+    return RAW_RASTER_DIR
 
 # Colour ramps for individual feature layers (name -> (vmin, vmax, cmap_name))
 # These are used to pre-render coloured PNGs for each feature layer.
@@ -111,9 +125,10 @@ def generate_predicted_heatscore(bundle, force=False):
 
     feature_cols = bundle['feature_columns']
     reg_model = bundle['regression_model']
+    raster_dir = _input_raster_dir()
 
     # Load reference raster for CRS/transform
-    ref_path = os.path.join(RASTER_DIR, f'{feature_cols[0]}.tif')
+    ref_path = os.path.join(raster_dir, f'{feature_cols[0]}.tif')
     ref_data, ref_profile, ref_transform, ref_crs, ref_bounds = load_raster(ref_path)
     height, width = ref_data.shape
 
@@ -125,7 +140,7 @@ def generate_predicted_heatscore(bundle, force=False):
     t0 = time.time()
     stack = np.full((len(feature_cols), height, width), np.nan, dtype=np.float32)
     for i, feat in enumerate(feature_cols):
-        feat_path = os.path.join(RASTER_DIR, f'{feat}.tif')
+        feat_path = os.path.join(raster_dir, f'{feat}.tif')
         if not os.path.exists(feat_path):
             print(f'[WARN] Missing raster for feature: {feat}')
             continue
@@ -193,14 +208,15 @@ def generate_simulated_raster(interventions):
     bundle = load_model()
     feature_cols = bundle['feature_columns']
     reg_model = bundle['regression_model']
+    raster_dir = _input_raster_dir()
 
-    ref_path = os.path.join(RASTER_DIR, f'{feature_cols[0]}.tif')
+    ref_path = os.path.join(raster_dir, f'{feature_cols[0]}.tif')
     ref_data, ref_profile, ref_transform, ref_crs, ref_bounds = load_raster(ref_path)
     height, width = ref_data.shape
 
     stack = np.full((len(feature_cols), height, width), np.nan, dtype=np.float32)
     for i, feat in enumerate(feature_cols):
-        feat_path = os.path.join(RASTER_DIR, f'{feat}.tif')
+        feat_path = os.path.join(raster_dir, f'{feat}.tif')
         if os.path.exists(feat_path):
             data, _, _, _, _ = load_raster(feat_path)
             if data.shape == (height, width):
@@ -266,11 +282,16 @@ def copy_feature_rasters_to_output(force=False):
     can serve them alongside the predicted HeatScore.
     """
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+    raster_dir = _input_raster_dir()
+    if os.path.abspath(raster_dir) == os.path.abspath(OUTPUT_DIR):
+        print(f'[OK] Serving precomputed rasters from {OUTPUT_DIR}')
+        return
+
     copied = 0
-    for name in os.listdir(RASTER_DIR):
+    for name in os.listdir(raster_dir):
         if not name.endswith('.tif'):
             continue
-        src_path = os.path.join(RASTER_DIR, name)
+        src_path = os.path.join(raster_dir, name)
         dst_path = os.path.join(OUTPUT_DIR, name)
         if os.path.exists(dst_path) and not force:
             continue

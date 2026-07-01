@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { useStore } from '../store/useStore';
+import { apiUrl } from '../services/api';
 
 interface GeocoderResult {
   lat: number;
@@ -56,7 +57,7 @@ export function useGeocoder() {
     setSuggestions([]);
     
     // Trigger backend GEE pipeline processing for the new AOI
-    fetch('/api/search_aoi', {
+    fetch(apiUrl('/search_aoi'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ lat: result.lat, lng: result.lng }),

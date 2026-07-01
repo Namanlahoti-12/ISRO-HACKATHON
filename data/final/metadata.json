@@ -1,0 +1,1223 @@
+{
+  "project": "Urban Heat AI - ISRO Bharatiya Antariksh Hackathon",
+  "version": "2.1",
+  "generated_at": "2026-06-29T18:01:11.815614",
+  "city": "Delhi",
+  "dataset": {
+    "total_rows": 1869,
+    "total_columns": 92,
+    "column_names": [
+      "PixelID",
+      "Latitude",
+      "Longitude",
+      "Timestamp",
+      "LST",
+      "NDVI",
+      "NDBI",
+      "NDWI",
+      "MNDWI",
+      "SAVI",
+      "Albedo",
+      "Impervious_Frac",
+      "LULC_ESA",
+      "LULC_DW",
+      "Population_Density",
+      "Building_Height",
+      "Building_Density",
+      "Building_Volume",
+      "Road_Density_Proxy",
+      "Street_Width_Proxy",
+      "Tree_Cover_Pct",
+      "Dist_Water",
+      "Dist_Green",
+      "Elevation",
+      "Slope",
+      "Aspect",
+      "AirTemp",
+      "Humidity",
+      "WindSpeed",
+      "WindDirection",
+      "SolarRadiation",
+      "Cloud_Cover_Proxy",
+      "Pressure",
+      "Rainfall",
+      "Nighttime_Lights",
+      "UHI_Intensity",
+      "UTFVI",
+      "UTCI_Approx",
+      "Anthropogenic_Heat",
+      "Green_Space_Density",
+      "Surface_Roughness",
+      "QualityScore",
+      "LULC_ESA_Trees",
+      "LULC_ESA_Shrubland",
+      "LULC_ESA_Grassland",
+      "LULC_ESA_Cropland",
+      "LULC_ESA_Built_up",
+      "LULC_ESA_Bare",
+      "LULC_ESA_Water",
+      "LULC_DW_Water",
+      "LULC_DW_Trees",
+      "LULC_DW_Grass",
+      "LULC_DW_Flooded_Veg",
+      "LULC_DW_Crops",
+      "LULC_DW_Shrub",
+      "LULC_DW_Built",
+      "LULC_DW_Bare",
+      "AirTemp_zscore",
+      "Albedo_norm",
+      "Anthropogenic_Heat_zscore",
+      "Aspect_cos",
+      "Aspect_sin",
+      "Building_Density_zscore",
+      "Building_Height_zscore",
+      "Building_Volume_zscore",
+      "Dist_Green_zscore",
+      "Dist_Water_zscore",
+      "Elevation_zscore",
+      "Green_Space_Density_norm",
+      "Humidity_zscore",
+      "Impervious_Frac_norm",
+      "LST_zscore",
+      "MNDWI_norm",
+      "NDBI_norm",
+      "NDVI_norm",
+      "NDWI_norm",
+      "Nighttime_Lights_zscore",
+      "Population_Density_zscore",
+      "Pressure_zscore",
+      "QualityScore_norm",
+      "Rainfall_zscore",
+      "Road_Density_Proxy_norm",
+      "SAVI_norm",
+      "Slope_zscore",
+      "SolarRadiation_zscore",
+      "Surface_Roughness_zscore",
+      "Tree_Cover_Pct_norm",
+      "UHI_Intensity_zscore",
+      "UTFVI_zscore",
+      "WindDirection_cos",
+      "WindDirection_sin",
+      "WindSpeed_zscore"
+    ],
+    "target_variable": "LST",
+    "metadata_columns": [
+      "PixelID",
+      "Latitude",
+      "Longitude",
+      "Timestamp"
+    ],
+    "raw_feature_count": 38,
+    "encoded_feature_count": 15,
+    "normalized_feature_count": 35
+  },
+  "splits": {
+    "train": {
+      "rows": 1308,
+      "file": "Delhi_train.csv"
+    },
+    "validation": {
+      "rows": 280,
+      "file": "Delhi_val.csv"
+    },
+    "test": {
+      "rows": 281,
+      "file": "Delhi_test.csv"
+    },
+    "split_ratio": "70/15/15",
+    "random_seed": 42
+  },
+  "crs": "EPSG:4326",
+  "spatial_resolution_m": 30,
+  "temporal_coverage": "Composite (median over date range)",
+  "normalization": {
+    "StandardScaler": {
+      "features": [
+        "LST",
+        "AirTemp",
+        "Humidity",
+        "WindSpeed",
+        "SolarRadiation",
+        "Pressure",
+        "Rainfall",
+        "Elevation",
+        "Slope",
+        "Building_Density",
+        "Building_Height",
+        "Building_Volume",
+        "Nighttime_Lights",
+        "Population_Density",
+        "Dist_Water",
+        "Dist_Green",
+        "Surface_Roughness",
+        "Anthropogenic_Heat",
+        "UHI_Intensity",
+        "UTFVI"
+      ],
+      "means": {
+        "LST": 36.00734617442483,
+        "AirTemp": 34.98241305510969,
+        "Humidity": 44.92107009095773,
+        "WindSpeed": 2.96071696094168,
+        "SolarRadiation": 249.0457945425361,
+        "Pressure": 1002.540989834136,
+        "Rainfall": 73.77473515248796,
+        "Elevation": 239.2100588550027,
+        "Slope": 2.532846441947566,
+        "Building_Density": 12.196623863028357,
+        "Building_Height": 4.54689138576779,
+        "Building_Volume": 157.85138576779025,
+        "Nighttime_Lights": 9.597592295345104,
+        "Population_Density": 187.77758159443553,
+        "Dist_Water": 2533.3673087212414,
+        "Dist_Green": 962.6676832530765,
+        "Surface_Roughness": 4.324735152487961,
+        "Anthropogenic_Heat": 0.10191193151417868,
+        "UHI_Intensity": 0.007346174424826112,
+        "UTFVI": -0.05243841626538255
+      },
+      "stds": {
+        "LST": 4.936917947597292,
+        "AirTemp": 2.0146140787010047,
+        "Humidity": 11.378535391769624,
+        "WindSpeed": 1.1593317938702468,
+        "SolarRadiation": 40.98323044897466,
+        "Pressure": 7.288413273209414,
+        "Rainfall": 42.81294146109379,
+        "Elevation": 23.053535652824593,
+        "Slope": 1.451498083507269,
+        "Building_Density": 19.82205075395419,
+        "Building_Height": 6.056199846037765,
+        "Building_Volume": 411.7360260876421,
+        "Nighttime_Lights": 12.849338126811292,
+        "Population_Density": 400.4677283239303,
+        "Dist_Water": 1457.1334850538396,
+        "Dist_Green": 991.740866818094,
+        "Surface_Roughness": 2.161583722989474,
+        "Anthropogenic_Heat": 0.1520400334201518,
+        "UHI_Intensity": 4.936917947597292,
+        "UTFVI": 0.12991851280249997
+      }
+    },
+    "MinMaxScaler": {
+      "features": [
+        "NDVI",
+        "NDBI",
+        "NDWI",
+        "MNDWI",
+        "SAVI",
+        "Albedo",
+        "Impervious_Frac",
+        "Tree_Cover_Pct",
+        "Green_Space_Density",
+        "Road_Density_Proxy",
+        "QualityScore"
+      ],
+      "mins": {
+        "NDVI": -0.1,
+        "NDBI": -0.2999,
+        "NDWI": -0.4997,
+        "MNDWI": -0.5949,
+        "SAVI": -0.1,
+        "Albedo": 0.0803,
+        "Impervious_Frac": 0.0,
+        "Tree_Cover_Pct": 0.0,
+        "Green_Space_Density": 0.0001,
+        "Road_Density_Proxy": -0.1,
+        "QualityScore": 2.0
+      },
+      "maxs": {
+        "NDVI": 0.799,
+        "NDBI": 0.3483,
+        "NDWI": 0.5987,
+        "MNDWI": 0.6768,
+        "SAVI": 0.799,
+        "Albedo": 0.3499,
+        "Impervious_Frac": 1.0,
+        "Tree_Cover_Pct": 80.0,
+        "Green_Space_Density": 0.769,
+        "Road_Density_Proxy": 0.4994,
+        "QualityScore": 18.0
+      }
+    }
+  },
+  "feature_statistics": {
+    "PixelID": {
+      "mean": 934.0,
+      "std": 539.678145,
+      "min": 0.0,
+      "max": 1868.0,
+      "median": 934.0,
+      "missing_pct": 0.0,
+      "unique": 1869
+    },
+    "Latitude": {
+      "mean": 28.614345,
+      "std": 0.085687,
+      "min": 28.464042,
+      "max": 28.763826,
+      "median": 28.617331,
+      "missing_pct": 0.0,
+      "unique": 1864
+    },
+    "Longitude": {
+      "mean": 77.211468,
+      "std": 0.086977,
+      "min": 77.059288,
+      "max": 77.358945,
+      "median": 77.213028,
+      "missing_pct": 0.0,
+      "unique": 1860
+    },
+    "LST": {
+      "mean": 36.007346,
+      "std": 4.938239,
+      "min": 21.78,
+      "max": 53.52,
+      "median": 35.71,
+      "missing_pct": 0.0,
+      "unique": 1196
+    },
+    "NDVI": {
+      "mean": 0.388649,
+      "std": 0.248088,
+      "min": -0.1,
+      "max": 0.799,
+      "median": 0.3472,
+      "missing_pct": 0.0,
+      "unique": 1641
+    },
+    "NDBI": {
+      "mean": -0.079718,
+      "std": 0.153818,
+      "min": -0.2999,
+      "max": 0.3483,
+      "median": -0.1003,
+      "missing_pct": 0.0,
+      "unique": 1507
+    },
+    "NDWI": {
+      "mean": -0.165247,
+      "std": 0.253578,
+      "min": -0.4997,
+      "max": 0.5987,
+      "median": -0.2077,
+      "missing_pct": 0.0,
+      "unique": 1613
+    },
+    "MNDWI": {
+      "mean": -0.163325,
+      "std": 0.260938,
+      "min": -0.5949,
+      "max": 0.6768,
+      "median": -0.2033,
+      "missing_pct": 0.0,
+      "unique": 1658
+    },
+    "SAVI": {
+      "mean": 0.388649,
+      "std": 0.248088,
+      "min": -0.1,
+      "max": 0.799,
+      "median": 0.3472,
+      "missing_pct": 0.0,
+      "unique": 1641
+    },
+    "Albedo": {
+      "mean": 0.214786,
+      "std": 0.078306,
+      "min": 0.0803,
+      "max": 0.3499,
+      "median": 0.2137,
+      "missing_pct": 0.0,
+      "unique": 1375
+    },
+    "Impervious_Frac": {
+      "mean": 0.132691,
+      "std": 0.339332,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_ESA": {
+      "mean": 41.262707,
+      "std": 22.047496,
+      "min": 10.0,
+      "max": 80.0,
+      "median": 40.0,
+      "missing_pct": 0.0,
+      "unique": 7
+    },
+    "LULC_DW": {
+      "mean": 3.548957,
+      "std": 2.318667,
+      "min": 0.0,
+      "max": 7.0,
+      "median": 4.0,
+      "missing_pct": 0.0,
+      "unique": 8
+    },
+    "Population_Density": {
+      "mean": 187.777582,
+      "std": 400.574906,
+      "min": 0.0,
+      "max": 1999.9,
+      "median": 57.8,
+      "missing_pct": 0.0,
+      "unique": 1046
+    },
+    "Building_Height": {
+      "mean": 4.546891,
+      "std": 6.057821,
+      "min": 0.0,
+      "max": 29.89,
+      "median": 2.86,
+      "missing_pct": 0.0,
+      "unique": 711
+    },
+    "Building_Density": {
+      "mean": 12.196624,
+      "std": 19.827356,
+      "min": 0.0,
+      "max": 89.96,
+      "median": 5.68,
+      "missing_pct": 0.0,
+      "unique": 1043
+    },
+    "Building_Volume": {
+      "mean": 157.851386,
+      "std": 411.846219,
+      "min": 0.0,
+      "max": 2633.19,
+      "median": 11.38,
+      "missing_pct": 0.0,
+      "unique": 1468
+    },
+    "Road_Density_Proxy": {
+      "mean": 0.034784,
+      "std": 0.114952,
+      "min": -0.1,
+      "max": 0.4994,
+      "median": 0.0151,
+      "missing_pct": 0.0,
+      "unique": 1329
+    },
+    "Street_Width_Proxy": {
+      "mean": 6.39324,
+      "std": 2.492377,
+      "min": 5.0,
+      "max": 17.485,
+      "median": 5.3775,
+      "missing_pct": 0.0,
+      "unique": 771
+    },
+    "Tree_Cover_Pct": {
+      "mean": 29.820171,
+      "std": 27.391618,
+      "min": 0.0,
+      "max": 80.0,
+      "median": 13.0,
+      "missing_pct": 0.0,
+      "unique": 494
+    },
+    "Dist_Water": {
+      "mean": 2533.367309,
+      "std": 1457.523458,
+      "min": 6.8,
+      "max": 4995.2,
+      "median": 2597.0,
+      "missing_pct": 0.0,
+      "unique": 1835
+    },
+    "Dist_Green": {
+      "mean": 962.667683,
+      "std": 992.006287,
+      "min": 0.2,
+      "max": 2992.9,
+      "median": 639.9,
+      "missing_pct": 0.0,
+      "unique": 1606
+    },
+    "Elevation": {
+      "mean": 239.210059,
+      "std": 23.059705,
+      "min": 200.1,
+      "max": 280.0,
+      "median": 239.1,
+      "missing_pct": 0.0,
+      "unique": 721
+    },
+    "Slope": {
+      "mean": 2.532846,
+      "std": 1.451887,
+      "min": 0.0,
+      "max": 5.0,
+      "median": 2.61,
+      "missing_pct": 0.0,
+      "unique": 486
+    },
+    "Aspect": {
+      "mean": 184.321723,
+      "std": 103.712282,
+      "min": 0.3,
+      "max": 359.8,
+      "median": 184.6,
+      "missing_pct": 0.0,
+      "unique": 1466
+    },
+    "AirTemp": {
+      "mean": 34.982413,
+      "std": 2.015153,
+      "min": 27.76,
+      "max": 42.48,
+      "median": 35.0,
+      "missing_pct": 0.0,
+      "unique": 736
+    },
+    "Humidity": {
+      "mean": 44.92107,
+      "std": 11.381581,
+      "min": 25.0,
+      "max": 64.98,
+      "median": 44.77,
+      "missing_pct": 0.0,
+      "unique": 1498
+    },
+    "WindSpeed": {
+      "mean": 2.960717,
+      "std": 1.159642,
+      "min": 1.0,
+      "max": 5.0,
+      "median": 2.97,
+      "missing_pct": 0.0,
+      "unique": 395
+    },
+    "WindDirection": {
+      "mean": 180.774692,
+      "std": 103.193549,
+      "min": 0.0,
+      "max": 359.7,
+      "median": 181.3,
+      "missing_pct": 0.0,
+      "unique": 1440
+    },
+    "SolarRadiation": {
+      "mean": 249.045795,
+      "std": 40.994199,
+      "min": 180.02,
+      "max": 319.97,
+      "median": 248.56,
+      "missing_pct": 0.0,
+      "unique": 1759
+    },
+    "Cloud_Cover_Proxy": {
+      "mean": 0.288441,
+      "std": 0.117125,
+      "min": 0.0858,
+      "max": 0.4857,
+      "median": 0.2898,
+      "missing_pct": 0.0,
+      "unique": 1489
+    },
+    "Pressure": {
+      "mean": 1002.54099,
+      "std": 7.290364,
+      "min": 990.01,
+      "max": 1014.99,
+      "median": 1002.85,
+      "missing_pct": 0.0,
+      "unique": 1287
+    },
+    "Rainfall": {
+      "mean": 73.774735,
+      "std": 42.824399,
+      "min": 0.01,
+      "max": 149.97,
+      "median": 73.38,
+      "missing_pct": 0.0,
+      "unique": 1762
+    },
+    "Nighttime_Lights": {
+      "mean": 9.597592,
+      "std": 12.852777,
+      "min": 0.0,
+      "max": 59.79,
+      "median": 5.77,
+      "missing_pct": 0.0,
+      "unique": 1039
+    },
+    "UHI_Intensity": {
+      "mean": 0.007346,
+      "std": 4.938239,
+      "min": -14.22,
+      "max": 17.52,
+      "median": -0.29,
+      "missing_pct": 0.0,
+      "unique": 1196
+    },
+    "UTFVI": {
+      "mean": -0.052438,
+      "std": 0.129953,
+      "min": -0.4269,
+      "max": 0.4083,
+      "median": -0.0601,
+      "missing_pct": 0.0,
+      "unique": 1552
+    },
+    "UTCI_Approx": {
+      "mean": 31.838999,
+      "std": 2.271577,
+      "min": 25.22,
+      "max": 40.73,
+      "median": 31.81,
+      "missing_pct": 0.0,
+      "unique": 802
+    },
+    "Anthropogenic_Heat": {
+      "mean": 0.101912,
+      "std": 0.152081,
+      "min": 0.0,
+      "max": 0.7997,
+      "median": 0.0581,
+      "missing_pct": 0.0,
+      "unique": 1055
+    },
+    "Green_Space_Density": {
+      "mean": 0.27473,
+      "std": 0.208462,
+      "min": 0.0001,
+      "max": 0.769,
+      "median": 0.2539,
+      "missing_pct": 0.0,
+      "unique": 1574
+    },
+    "Surface_Roughness": {
+      "mean": 4.324735,
+      "std": 2.162162,
+      "min": 0.5,
+      "max": 7.99,
+      "median": 4.33,
+      "missing_pct": 0.0,
+      "unique": 696
+    },
+    "QualityScore": {
+      "mean": 10.003745,
+      "std": 4.89947,
+      "min": 2.0,
+      "max": 18.0,
+      "median": 10.0,
+      "missing_pct": 0.0,
+      "unique": 17
+    },
+    "LULC_ESA_Trees": {
+      "mean": 0.135367,
+      "std": 0.342206,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_ESA_Shrubland": {
+      "mean": 0.150883,
+      "std": 0.35803,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_ESA_Grassland": {
+      "mean": 0.137507,
+      "std": 0.344474,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_ESA_Cropland": {
+      "mean": 0.162119,
+      "std": 0.368658,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_ESA_Built_up": {
+      "mean": 0.132691,
+      "std": 0.339332,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_ESA_Bare": {
+      "mean": 0.143392,
+      "std": 0.350566,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_ESA_Water": {
+      "mean": 0.138042,
+      "std": 0.345036,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_DW_Water": {
+      "mean": 0.126806,
+      "std": 0.332844,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_DW_Trees": {
+      "mean": 0.126806,
+      "std": 0.332844,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_DW_Grass": {
+      "mean": 0.11236,
+      "std": 0.315893,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_DW_Flooded_Veg": {
+      "mean": 0.12306,
+      "std": 0.328595,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_DW_Crops": {
+      "mean": 0.12092,
+      "std": 0.326122,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_DW_Shrub": {
+      "mean": 0.126271,
+      "std": 0.332243,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_DW_Built": {
+      "mean": 0.133226,
+      "std": 0.33991,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LULC_DW_Bare": {
+      "mean": 0.130551,
+      "std": 0.336999,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "AirTemp_zscore": {
+      "mean": -0.0,
+      "std": 1.000268,
+      "min": -3.585011,
+      "max": 3.7216,
+      "median": 0.00873,
+      "missing_pct": 0.0,
+      "unique": 736
+    },
+    "Albedo_norm": {
+      "mean": 0.498834,
+      "std": 0.290451,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.494807,
+      "missing_pct": 0.0,
+      "unique": 1375
+    },
+    "Anthropogenic_Heat_zscore": {
+      "mean": 0.0,
+      "std": 1.000268,
+      "min": -0.670297,
+      "max": 4.589502,
+      "median": -0.28816,
+      "missing_pct": 0.0,
+      "unique": 1055
+    },
+    "Aspect_cos": {
+      "mean": 0.000193,
+      "std": 0.707192,
+      "min": -1.0,
+      "max": 0.999994,
+      "median": 0.005236,
+      "missing_pct": 0.0,
+      "unique": 1157
+    },
+    "Aspect_sin": {
+      "mean": -0.018091,
+      "std": 0.707168,
+      "min": -1.0,
+      "max": 1.0,
+      "median": -0.052336,
+      "missing_pct": 0.0,
+      "unique": 1170
+    },
+    "Building_Density_zscore": {
+      "mean": 0.0,
+      "std": 1.000268,
+      "min": -0.615306,
+      "max": 3.923074,
+      "median": -0.328756,
+      "missing_pct": 0.0,
+      "unique": 1043
+    },
+    "Building_Height_zscore": {
+      "mean": 0.0,
+      "std": 1.000268,
+      "min": -0.750783,
+      "max": 4.184655,
+      "median": -0.27854,
+      "missing_pct": 0.0,
+      "unique": 711
+    },
+    "Building_Volume_zscore": {
+      "mean": 0.0,
+      "std": 1.000268,
+      "min": -0.38338,
+      "max": 6.011955,
+      "median": -0.355741,
+      "missing_pct": 0.0,
+      "unique": 1468
+    },
+    "Dist_Green_zscore": {
+      "mean": 0.0,
+      "std": 1.000268,
+      "min": -0.970483,
+      "max": 2.04714,
+      "median": -0.325456,
+      "missing_pct": 0.0,
+      "unique": 1606
+    },
+    "Dist_Water_zscore": {
+      "mean": -0.0,
+      "std": 1.000268,
+      "min": -1.73393,
+      "max": 1.689504,
+      "median": 0.04367,
+      "missing_pct": 0.0,
+      "unique": 1835
+    },
+    "Elevation_zscore": {
+      "mean": -0.0,
+      "std": 1.000268,
+      "min": -1.696489,
+      "max": 1.769357,
+      "median": -0.004774,
+      "missing_pct": 0.0,
+      "unique": 721
+    },
+    "Green_Space_Density_norm": {
+      "mean": 0.357173,
+      "std": 0.271117,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.330082,
+      "missing_pct": 0.0,
+      "unique": 1574
+    },
+    "Humidity_zscore": {
+      "mean": 0.0,
+      "std": 1.000268,
+      "min": -1.750759,
+      "max": 1.762875,
+      "median": -0.013277,
+      "missing_pct": 0.0,
+      "unique": 1498
+    },
+    "Impervious_Frac_norm": {
+      "mean": 0.132691,
+      "std": 0.339332,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "missing_pct": 0.0,
+      "unique": 2
+    },
+    "LST_zscore": {
+      "mean": -0.0,
+      "std": 1.000268,
+      "min": -2.881828,
+      "max": 3.547285,
+      "median": -0.060229,
+      "missing_pct": 0.0,
+      "unique": 1196
+    },
+    "MNDWI_norm": {
+      "mean": 0.339368,
+      "std": 0.205189,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.307934,
+      "missing_pct": 0.0,
+      "unique": 1658
+    },
+    "NDBI_norm": {
+      "mean": 0.339682,
+      "std": 0.237301,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.30793,
+      "missing_pct": 0.0,
+      "unique": 1507
+    },
+    "NDVI_norm": {
+      "mean": 0.543547,
+      "std": 0.27596,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.497442,
+      "missing_pct": 0.0,
+      "unique": 1641
+    },
+    "NDWI_norm": {
+      "mean": 0.304491,
+      "std": 0.230861,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.265841,
+      "missing_pct": 0.0,
+      "unique": 1613
+    },
+    "Nighttime_Lights_zscore": {
+      "mean": 0.0,
+      "std": 1.000268,
+      "min": -0.746933,
+      "max": 3.906225,
+      "median": -0.297882,
+      "missing_pct": 0.0,
+      "unique": 1039
+    },
+    "Population_Density_zscore": {
+      "mean": -0.0,
+      "std": 1.000268,
+      "min": -0.468896,
+      "max": 4.525015,
+      "median": -0.324564,
+      "missing_pct": 0.0,
+      "unique": 1046
+    },
+    "Pressure_zscore": {
+      "mean": -0.0,
+      "std": 1.000268,
+      "min": -1.719303,
+      "max": 1.708055,
+      "median": 0.042397,
+      "missing_pct": 0.0,
+      "unique": 1287
+    },
+    "QualityScore_norm": {
+      "mean": 0.500234,
+      "std": 0.306217,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.5,
+      "missing_pct": 0.0,
+      "unique": 17
+    },
+    "Rainfall_zscore": {
+      "mean": -0.0,
+      "std": 1.000268,
+      "min": -1.722954,
+      "max": 1.779725,
+      "median": -0.00922,
+      "missing_pct": 0.0,
+      "unique": 1762
+    },
+    "Road_Density_Proxy_norm": {
+      "mean": 0.224865,
+      "std": 0.191778,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.192025,
+      "missing_pct": 0.0,
+      "unique": 1329
+    },
+    "SAVI_norm": {
+      "mean": 0.543547,
+      "std": 0.27596,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.497442,
+      "missing_pct": 0.0,
+      "unique": 1641
+    },
+    "Slope_zscore": {
+      "mean": -0.0,
+      "std": 1.000268,
+      "min": -1.744988,
+      "max": 1.699729,
+      "median": 0.053154,
+      "missing_pct": 0.0,
+      "unique": 486
+    },
+    "SolarRadiation_zscore": {
+      "mean": 0.0,
+      "std": 1.000268,
+      "min": -1.684245,
+      "max": 1.730566,
+      "median": -0.011853,
+      "missing_pct": 0.0,
+      "unique": 1759
+    },
+    "Surface_Roughness_zscore": {
+      "mean": 0.0,
+      "std": 1.000268,
+      "min": -1.769413,
+      "max": 1.695639,
+      "median": 0.002436,
+      "missing_pct": 0.0,
+      "unique": 696
+    },
+    "Tree_Cover_Pct_norm": {
+      "mean": 0.372752,
+      "std": 0.342395,
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.1625,
+      "missing_pct": 0.0,
+      "unique": 494
+    },
+    "UHI_Intensity_zscore": {
+      "mean": -0.0,
+      "std": 1.000268,
+      "min": -2.881828,
+      "max": 3.547285,
+      "median": -0.060229,
+      "missing_pct": 0.0,
+      "unique": 1196
+    },
+    "UTFVI_zscore": {
+      "mean": -0.0,
+      "std": 1.000268,
+      "min": -2.88228,
+      "max": 3.546365,
+      "median": -0.058972,
+      "missing_pct": 0.0,
+      "unique": 1552
+    },
+    "WindDirection_cos": {
+      "mean": -0.013802,
+      "std": 0.707237,
+      "min": -0.999998,
+      "max": 1.0,
+      "median": -0.013962,
+      "missing_pct": 0.0,
+      "unique": 1158
+    },
+    "WindDirection_sin": {
+      "mean": -0.01439,
+      "std": 0.707074,
+      "min": -0.999998,
+      "max": 1.0,
+      "median": -0.015707,
+      "missing_pct": 0.0,
+      "unique": 1162
+    },
+    "WindSpeed_zscore": {
+      "mean": -0.0,
+      "std": 1.000268,
+      "min": -1.691247,
+      "max": 1.759016,
+      "median": 0.008007,
+      "missing_pct": 0.0,
+      "unique": 395
+    }
+  },
+  "preprocessing_log": [
+    {
+      "step": 1,
+      "name": "Load CSV",
+      "detail": "UrbanHeatAI\\data\\raw\\Delhi_UHI_MasterDataset.csv | 2,000 rows x 39 cols",
+      "timestamp": "2026-06-29T18:01:10.984468"
+    },
+    {
+      "step": 2,
+      "name": "Schema validation",
+      "detail": "All 39 expected columns present",
+      "timestamp": "2026-06-29T18:01:10.984468"
+    },
+    {
+      "step": 3,
+      "name": "CRS validation",
+      "detail": "All coordinates valid WGS84 (EPSG:4326)",
+      "timestamp": "2026-06-29T18:01:10.989566"
+    },
+    {
+      "step": 4,
+      "name": "Timestamps",
+      "detail": "1 unique timestamp(s). All pixels share the same composite period (temporal alignment inherent).",
+      "timestamp": "2026-06-29T18:01:10.989566"
+    },
+    {
+      "step": 5,
+      "name": "Range clamping",
+      "detail": "55 individual values clamped to valid ranges",
+      "timestamp": "2026-06-29T18:01:11.021790"
+    },
+    {
+      "step": 5,
+      "name": "Invalid removal total",
+      "detail": "0 total rows removed",
+      "timestamp": "2026-06-29T18:01:11.021790",
+      "rows_before": 2000,
+      "rows_after": 2000,
+      "rows_removed": 0
+    },
+    {
+      "step": 6,
+      "name": "Cloud filter",
+      "detail": "Removed 131 pixels with QualityScore < 2 (< 2 valid observations = mostly cloudy)",
+      "timestamp": "2026-06-29T18:01:11.030338",
+      "rows_before": 2000,
+      "rows_after": 1869,
+      "rows_removed": 131
+    },
+    {
+      "step": 7,
+      "name": "Duplicates",
+      "detail": "No duplicates found",
+      "timestamp": "2026-06-29T18:01:11.054629"
+    },
+    {
+      "step": 8,
+      "name": "Compute Street Width",
+      "detail": "Proxy = Road_Density * 25 + 5 (estimated 5-30m range)",
+      "timestamp": "2026-06-29T18:01:11.057721"
+    },
+    {
+      "step": 8,
+      "name": "Compute UTCI",
+      "detail": "Approximate UTCI from Blazejczyk et al. (2012) simplified model",
+      "timestamp": "2026-06-29T18:01:11.057721"
+    },
+    {
+      "step": 8,
+      "name": "Compute Cloud Cover",
+      "detail": "Proxy = 1 - SR/350 (inverse solar radiation fraction)",
+      "timestamp": "2026-06-29T18:01:11.057721"
+    },
+    {
+      "step": 8,
+      "name": "Derived features",
+      "detail": "3 new features computed",
+      "timestamp": "2026-06-29T18:01:11.057721"
+    },
+    {
+      "step": 9,
+      "name": "Missing summary",
+      "detail": "2 columns have missing values (51 total NaN cells)",
+      "timestamp": "2026-06-29T18:01:11.063315"
+    },
+    {
+      "step": 9,
+      "name": "  Impute Building_Height",
+      "detail": "37 NaN -> 0 (absence = no urban feature)",
+      "timestamp": "2026-06-29T18:01:11.068670"
+    },
+    {
+      "step": 9,
+      "name": "  Impute Nighttime_Lights",
+      "detail": "14 NaN -> 0 (absence = no urban feature)",
+      "timestamp": "2026-06-29T18:01:11.068670"
+    },
+    {
+      "step": 9,
+      "name": "Missing values resolved",
+      "detail": "51 NaN -> 0 remaining",
+      "timestamp": "2026-06-29T18:01:11.071717"
+    },
+    {
+      "step": 10,
+      "name": "Encode LULC_ESA",
+      "detail": "7 classes -> 7 binary columns",
+      "timestamp": "2026-06-29T18:01:11.071717"
+    },
+    {
+      "step": 10,
+      "name": "Encode LULC_DW",
+      "detail": "8 classes -> 8 binary columns",
+      "timestamp": "2026-06-29T18:01:11.071717"
+    },
+    {
+      "step": 10,
+      "name": "Encoding complete",
+      "detail": "15 one-hot columns created from 2 categoricals",
+      "timestamp": "2026-06-29T18:01:11.071717"
+    },
+    {
+      "step": 11,
+      "name": "StandardScaler",
+      "detail": "20 features -> z-score normalized (mean=0, std=1)",
+      "timestamp": "2026-06-29T18:01:11.137458"
+    },
+    {
+      "step": 11,
+      "name": "MinMaxScaler",
+      "detail": "11 features -> [0,1] normalized",
+      "timestamp": "2026-06-29T18:01:11.145714"
+    },
+    {
+      "step": 11,
+      "name": "Circular encoding",
+      "detail": "Aspect + WindDirection -> sin/cos components",
+      "timestamp": "2026-06-29T18:01:11.145714"
+    },
+    {
+      "step": 12,
+      "name": "Final dataset",
+      "detail": "1869 rows x 92 columns",
+      "timestamp": "2026-06-29T18:01:11.153641"
+    },
+    {
+      "step": 13,
+      "name": "master_dataset.csv",
+      "detail": "Saved (1374.5 KB)",
+      "timestamp": "2026-06-29T18:01:11.428108"
+    },
+    {
+      "step": 13,
+      "name": "Data splits",
+      "detail": "Train: 1308 | Val: 280 | Test: 281",
+      "timestamp": "2026-06-29T18:01:11.708514"
+    }
+  ]
+}

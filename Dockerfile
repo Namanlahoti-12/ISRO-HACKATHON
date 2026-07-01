@@ -1,32 +1,21 @@
 FROM python:3.10-slim
 
-# Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV PORT=5000
 
-# Set working directory
-WORKDIR /app
+WORKDIR /project
 
-# Install system dependencies if any are needed for shapely/rasterio
-# (Usually not needed because wheels are available, but libgomp1 is needed for LightGBM/XGBoost often)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
-# Install python dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY backend/requirements.txt ./backend/requirements.txt
+RUN pip install --no-cache-dir -r backend/requirements.txt
 
-# Copy the entire project
-# We copy the root directory because backend/app.py accesses ../outputs and ../models
-COPY . /project
+COPY . .
 
-# Set working directory to backend
 WORKDIR /project/backend
 
-# Expose port
-EXPOSE 5000
+EXPOSE 10000
 
-# Start gunicorn server
-CMD ["python", "app.py"]
+CMD gunicorn --bind 0.0.0.0:${PORT:-10000} --workers 1 --threads 4 --timeout 180 app:app

@@ -13,7 +13,7 @@
 import { useEffect, useRef, useCallback } from 'react';
 import maplibregl from 'maplibre-gl';
 import { useStore } from '../store/useStore';
-import { useConfig, useGridStats, API_BASE } from '../services/api';
+import { useConfig, useGridStats, apiUrl } from '../services/api';
 import { DARK_STYLE, OSM_FALLBACK, DARK_STYLE_URL, LIGHT_STYLE_URL } from '../maps/layerConfig';
 
 // ── Constants ───────────────────────────────────────────────────────────────
@@ -22,7 +22,7 @@ const RASTER_LYR_PREFIX = 'raster-lyr-';
 
 /** Build tile URL for a layer */
 const tileUrl = (layerKey: string) =>
-  `${API_BASE}/api/tiles/${layerKey}/{z}/{x}/{y}.png`;
+  apiUrl(`/tiles/${layerKey}/{z}/{x}/{y}.png`);
 
 export function MapView() {
   const containerRef    = useRef<HTMLDivElement>(null);
@@ -141,7 +141,7 @@ export function MapView() {
       const { lat, lng } = e.lngLat;
 
       // Fetch pixel info from the grid API
-      fetch(`/api/grid`)
+      fetch(apiUrl('/grid'))
         .then((r) => r.json())
         .then((data) => {
           if (!data.pixels?.length) return;

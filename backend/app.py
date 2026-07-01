@@ -58,7 +58,44 @@ PREDICTION_GEOJSON = None   # Generated FeatureCollection served as prediction_g
 GRID_STATS = None            # Per-column min/max/mean/std for color scaling
 MODIFIER = FeatureModifier()
 
-PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..')
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+
+def _first_existing_file(*paths):
+    """Return the first existing file from a list of candidates."""
+    for path in paths:
+        if os.path.exists(path):
+            return path
+    return None
+
+
+def _raster_dir_metadata(raster_dir):
+    """Build tile metadata from a directory of GeoTIFF rasters."""
+    if not os.path.isdir(raster_dir):
+        return None
+
+    tifs = [f for f in os.listdir(raster_dir) if f.lower().endswith('.tif')]
+    if not tifs:
+        return None
+
+    preferred = os.path.join(raster_dir, 'HeatScore_Predicted.tif')
+    raster_path = preferred if os.path.exists(preferred) else os.path.join(raster_dir, tifs[0])
+
+    import rasterio
+    with rasterio.open(raster_path) as src:
+        bounds = src.bounds
+        return {
+            'raster_dir': raster_dir,
+            'width': src.width,
+            'height': src.height,
+            'bounds': {
+                'north': bounds.top,
+                'south': bounds.bottom,
+                'east': bounds.right,
+                'west': bounds.left,
+            },
+            'crs': str(src.crs or 'EPSG:4326'),
+        }
 
 
 def load_resources(register_routes=True):
@@ -82,10 +119,15 @@ def load_resources(register_routes=True):
         print(f"[WARN] Failed to load model: {e}")
 
     # --- Dataset ---
-    dataset_path = os.path.join(PROJECT_ROOT, 'data', 'processed', 'master_dataset.csv')
+    dataset_path = _first_existing_file(
+        os.path.join(PROJECT_ROOT, 'data', 'final', 'master_dataset.csv'),
+        os.path.join(PROJECT_ROOT, 'data', 'processed', 'master_dataset.csv'),
+    )
     try:
+        if dataset_path is None:
+            raise FileNotFoundError('master_dataset.csv not found in data/final or data/processed')
         DATASET = pd.read_csv(dataset_path)
-        print(f"[OK] Dataset loaded: {len(DATASET)} rows")
+        print(f"[OK] Dataset loaded: {len(DATASET)} rows from {dataset_path}")
         
         # Run predictions
         if REG_MODEL is not None:
@@ -107,16 +149,18 @@ def load_resources(register_routes=True):
     # --- Generate Raster Pipeline ---
     try:
         from tile_server import register_tile_routes
-        
+
+        output_dir = os.path.join(PROJECT_ROOT, 'outputs', 'rasters')
         demo_dir = os.path.join(PROJECT_ROOT, 'outputs', 'demo_rasters')
-        if os.path.exists(demo_dir) and len(os.listdir(demo_dir)) > 0:
-            print("[APP] DEMO MODE DETECTED. Using synthetic country-wide rasters.")
-            raster_meta = {
-                'raster_dir': demo_dir,
-                'width': 1000,
-                'height': 1000,
-                'bounds': {'north': 35.5, 'south': 6.7, 'east': 97.4, 'west': 68.1}
-            }
+
+        raster_meta = _raster_dir_metadata(output_dir)
+        if raster_meta:
+            print("[APP] Using precomputed deploy rasters from outputs/rasters.")
+        else:
+            raster_meta = _raster_dir_metadata(demo_dir)
+
+        if raster_meta:
+            print(f"[APP] Raster source: {raster_meta['raster_dir']}")
         else:
             from generate_raster import generate_all
             raster_meta = generate_all(force=False)
