@@ -62,7 +62,7 @@ export const useStore = create<AppState>((set) => ({
   activeLayer: 'HeatScore_Predicted',
   setActiveLayer: (l) => set({ activeLayer: l }),
 
-  opacity: 0.7,
+  opacity: 0.35,
   setOpacity: (v) => set({ opacity: v }),
 
   selectedPixelId: null,

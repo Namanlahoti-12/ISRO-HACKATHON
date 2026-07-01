@@ -251,7 +251,7 @@ export function MapView() {
 
       // Add the default raster layer
       const startLayer = (window as any).__activeLayer ?? 'HeatScore_Predicted';
-      const startOpacity = (window as any).__opacity ?? 0.7;
+      const startOpacity = (window as any).__opacity ?? 0.35;
       addRasterLayer(map, startLayer, startOpacity, true);
       currentLayerRef.current = startLayer;
 
@@ -273,7 +273,7 @@ export function MapView() {
         if (!res.ok) return;
         map.once('style.load', () => {
           const al = (window as any).__activeLayer ?? 'HeatScore_Predicted';
-          const op = (window as any).__opacity ?? 0.7;
+          const op = (window as any).__opacity ?? 0.35;
           addRasterLayer(map, al, op, true);
           currentLayerRef.current = al;
         });
