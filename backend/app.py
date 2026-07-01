@@ -835,11 +835,19 @@ def search_aoi():
         return jsonify({'error': str(e)}), 500
 
 # Load all ML models and rasters at module level so Gunicorn can serve them
-print('=' * 60)
-print('  URBAN COOLING API SERVER (INIT)')
-print('=' * 60)
-load_resources()
+print("=" * 60)
+print("URBAN COOLING API SERVER (INIT)")
+print("=" * 60)
 
+try:
+    print("[STEP 1] Starting load_resources()")
+    load_resources()
+    print("[STEP 2] load_resources() completed successfully")
+except Exception as e:
+    import traceback
+    print("!!!!!!!! STARTUP ERROR !!!!!!!!")
+    traceback.print_exc()
+    raise
 if __name__ == '__main__':
     print('\n  Starting Flask dev server...')
     port = int(os.environ.get('PORT', 5000))
