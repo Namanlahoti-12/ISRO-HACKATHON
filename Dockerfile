@@ -6,6 +6,7 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /project
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    libexpat1 \
     libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
