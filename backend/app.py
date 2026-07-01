@@ -98,10 +98,29 @@ def _raster_dir_metadata(raster_dir):
         }
 
 
+def _raster_dir_status(raster_dir):
+    """Return simple diagnostics for a raster directory without opening GeoTIFFs."""
+    status = {
+        'path': raster_dir,
+        'exists': os.path.isdir(raster_dir),
+        'count': 0,
+        'has_heatscore': False,
+        'sample': [],
+    }
+    if not status['exists']:
+        return status
+
+    tifs = sorted(f for f in os.listdir(raster_dir) if f.lower().endswith('.tif'))
+    status['count'] = len(tifs)
+    status['has_heatscore'] = 'HeatScore_Predicted.tif' in tifs
+    status['sample'] = tifs[:5]
+    return status
+
+
 def load_resources(register_routes=True):
     """Load model, dataset, generate grid GeoJSON, and setup rasters."""
     global REG_MODEL, CLS_MODEL, DATASET, HOTSPOTS, FEATURE_COLUMNS, PREDICTION_GEOJSON
-    global RASTER_META, GRID_STATS, HEAT_CLASSES
+    global RASTER_META, RASTER_ERROR, RASTER_CANDIDATES, GRID_STATS, HEAT_CLASSES
 
     print('\n[APP] Loading engine resources...')
     
@@ -147,11 +166,16 @@ def load_resources(register_routes=True):
         print(f"[WARN] Failed to load dataset: {e}")
 
     # --- Generate Raster Pipeline ---
+    RASTER_ERROR = None
     try:
-        from tile_server import register_tile_routes
-
         output_dir = os.path.join(PROJECT_ROOT, 'outputs', 'rasters')
         demo_dir = os.path.join(PROJECT_ROOT, 'outputs', 'demo_rasters')
+        RASTER_CANDIDATES = {
+            'demo': _raster_dir_status(demo_dir),
+            'outputs': _raster_dir_status(output_dir),
+        }
+
+        from tile_server import register_tile_routes
 
         raster_meta = _raster_dir_metadata(demo_dir)
         if raster_meta:
@@ -175,6 +199,8 @@ def load_resources(register_routes=True):
             print(f"[OK] Tile server registered at /api/tiles/<layer>/<z>/<x>/<y>.png")
         
     except Exception as e:
+        RASTER_META = None
+        RASTER_ERROR = f'{type(e).__name__}: {e}'
         import traceback; traceback.print_exc()
         print(f"[WARN] Raster pipeline failed: {e}")
 
@@ -333,6 +359,8 @@ def health():
         'n_features': len(FEATURE_COLUMNS) if FEATURE_COLUMNS else 0,
         'raster_ready': RASTER_META is not None,
         'raster_grid': f'{RASTER_META["width"]}x{RASTER_META["height"]}' if RASTER_META else None,
+        'raster_error': RASTER_ERROR,
+        'raster_candidates': RASTER_CANDIDATES,
     })
 
 
@@ -541,6 +569,8 @@ def _get_feature_changes(before_df, after_df):
 # =============================================================================
 
 RASTER_META = None   # populated by load_resources -> generate_all
+RASTER_ERROR = None
+RASTER_CANDIDATES = {}
 
 @app.route('/api/config')
 def get_config():
