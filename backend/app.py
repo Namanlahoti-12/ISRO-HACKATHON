@@ -153,11 +153,13 @@ def load_resources(register_routes=True):
         output_dir = os.path.join(PROJECT_ROOT, 'outputs', 'rasters')
         demo_dir = os.path.join(PROJECT_ROOT, 'outputs', 'demo_rasters')
 
-        raster_meta = _raster_dir_metadata(output_dir)
+        raster_meta = _raster_dir_metadata(demo_dir)
         if raster_meta:
-            print("[APP] Using precomputed deploy rasters from outputs/rasters.")
+            print("[APP] DEMO MODE DETECTED. Using country-wide demo rasters.")
         else:
-            raster_meta = _raster_dir_metadata(demo_dir)
+            raster_meta = _raster_dir_metadata(output_dir)
+            if raster_meta:
+                print("[APP] Using precomputed deploy rasters from outputs/rasters.")
 
         if raster_meta:
             print(f"[APP] Raster source: {raster_meta['raster_dir']}")
@@ -329,6 +331,8 @@ def health():
         'hotspots_detected': len(HOTSPOTS) if HOTSPOTS is not None else 0,
         'model_name': MODEL_BUNDLE['best_model_name'] if MODEL_BUNDLE else None,
         'n_features': len(FEATURE_COLUMNS) if FEATURE_COLUMNS else 0,
+        'raster_ready': RASTER_META is not None,
+        'raster_grid': f'{RASTER_META["width"]}x{RASTER_META["height"]}' if RASTER_META else None,
     })
 
 
