@@ -1,0 +1,79 @@
+{
+  "file": "C:\\Users\\NAMAN LAHOTI\\OneDrive\\Desktop\\ISRO\\UrbanHeatAI\\gee\\main.js",
+  "collections": {
+    "LANDSAT/LC08/C02/T1_L2": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": ""
+    },
+    "LANDSAT/LC09/C02/T1_L2": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": ""
+    },
+    "COPERNICUS/S2_SR_HARMONIZED": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": ""
+    },
+    "ECMWF/ERA5_LAND/HOURLY": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": ""
+    },
+    "ESA/WorldCover/v200": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": ""
+    },
+    "GOOGLE/DYNAMICWORLD/V1": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": ""
+    },
+    "USGS/SRTMGL1_003": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": ""
+    },
+    "NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": ""
+    },
+    "WorldPop/GP/100m/pop": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": ""
+    },
+    "UMD/hansen/global_forest_change_2023_v1_11": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": ""
+    },
+    "Tsinghua/FROM-GLC/GAIA/v10": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": ""
+    },
+    "JRC/GHSL/P2023A/GHS_BUILT_S": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": "May require epoch filter. try/catch used in main.js."
+    },
+    "JRC/GHSL/P2023A/GHS_BUILT_H": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": "May require epoch filter. try/catch used in main.js."
+    },
+    "FAO/GAUL/2015/level2": {
+      "found": true,
+      "status": "ACTIVE",
+      "note": ""
+    }
+  },
+  "deprecated_apis": [],
+  "issues": [],
+  "warnings": [],
+  "band_issues": []
+}

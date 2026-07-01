@@ -1,0 +1,555 @@
+{
+  "best_model": "GradientBoosting",
+  "composite_scores": {
+    "RandomForest": 0.9196,
+    "XGBoost": 0.9698,
+    "LightGBM": 0.9632,
+    "CatBoost": 0.9747,
+    "ExtraTrees": 0.8749,
+    "GradientBoosting": 0.9833
+  },
+  "models": {
+    "RandomForest": {
+      "regression": {
+        "RMSE": 1.7349,
+        "MAE": 1.0984,
+        "R2": 0.9888,
+        "CV_R2_mean": 0.9827,
+        "CV_R2_std": 0.0054,
+        "train_time_s": 0.61
+      },
+      "classification": {
+        "Accuracy": 0.9706,
+        "Precision": 0.9712,
+        "Recall": 0.9706,
+        "F1_Score": 0.9706,
+        "ROC_AUC": 0.999,
+        "CV_F1_mean": 0.9726,
+        "CV_F1_std": 0.0065,
+        "train_time_s": 0.74
+      },
+      "composite_score": 0.9196
+    },
+    "XGBoost": {
+      "regression": {
+        "RMSE": 0.6596,
+        "MAE": 0.4656,
+        "R2": 0.9984,
+        "CV_R2_mean": 0.9963,
+        "CV_R2_std": 0.0014,
+        "train_time_s": 0.71
+      },
+      "classification": {
+        "Accuracy": 0.9866,
+        "Precision": 0.9868,
+        "Recall": 0.9866,
+        "F1_Score": 0.9867,
+        "ROC_AUC": 0.9992,
+        "CV_F1_mean": 0.9813,
+        "CV_F1_std": 0.0054,
+        "train_time_s": 0.86
+      },
+      "composite_score": 0.9698
+    },
+    "LightGBM": {
+      "regression": {
+        "RMSE": 0.8007,
+        "MAE": 0.5091,
+        "R2": 0.9976,
+        "CV_R2_mean": 0.9951,
+        "CV_R2_std": 0.0017,
+        "train_time_s": 0.54
+      },
+      "classification": {
+        "Accuracy": 0.984,
+        "Precision": 0.9841,
+        "Recall": 0.984,
+        "F1_Score": 0.984,
+        "ROC_AUC": 0.9991,
+        "CV_F1_mean": 0.9813,
+        "CV_F1_std": 0.0084,
+        "train_time_s": 0.79
+      },
+      "composite_score": 0.9632
+    },
+    "CatBoost": {
+      "regression": {
+        "RMSE": 0.558,
+        "MAE": 0.3656,
+        "R2": 0.9988,
+        "CV_R2_mean": 0.9962,
+        "CV_R2_std": 0.0018,
+        "train_time_s": 1.99
+      },
+      "classification": {
+        "Accuracy": 0.9893,
+        "Precision": 0.9893,
+        "Recall": 0.9893,
+        "F1_Score": 0.9893,
+        "ROC_AUC": 0.9997,
+        "CV_F1_mean": 0.9812,
+        "CV_F1_std": 0.0066,
+        "train_time_s": 6.2
+      },
+      "composite_score": 0.9747
+    },
+    "ExtraTrees": {
+      "regression": {
+        "RMSE": 2.5933,
+        "MAE": 2.0374,
+        "R2": 0.9749,
+        "CV_R2_mean": 0.9662,
+        "CV_R2_std": 0.0055,
+        "train_time_s": 0.34
+      },
+      "classification": {
+        "Accuracy": 0.9519,
+        "Precision": 0.9526,
+        "Recall": 0.9519,
+        "F1_Score": 0.9521,
+        "ROC_AUC": 0.9967,
+        "CV_F1_mean": 0.9393,
+        "CV_F1_std": 0.0151,
+        "train_time_s": 0.54
+      },
+      "composite_score": 0.8749
+    },
+    "GradientBoosting": {
+      "regression": {
+        "RMSE": 0.359,
+        "MAE": 0.1752,
+        "R2": 0.9995,
+        "CV_R2_mean": 0.9985,
+        "CV_R2_std": 0.001,
+        "train_time_s": 1.27
+      },
+      "classification": {
+        "Accuracy": 0.992,
+        "Precision": 0.992,
+        "Recall": 0.992,
+        "F1_Score": 0.992,
+        "ROC_AUC": 0.9987,
+        "CV_F1_mean": 0.9813,
+        "CV_F1_std": 0.0096,
+        "train_time_s": 5.25
+      },
+      "composite_score": 0.9833
+    }
+  },
+  "best_model_detail": {
+    "regression": {
+      "RMSE": 0.359,
+      "MAE": 0.1752,
+      "R2": 0.9995,
+      "CV_R2_mean": 0.9985,
+      "CV_R2_std": 0.001,
+      "train_time_s": 1.27
+    },
+    "classification": {
+      "Accuracy": 0.992,
+      "Precision": 0.992,
+      "Recall": 0.992,
+      "F1_Score": 0.992,
+      "ROC_AUC": 0.9987,
+      "CV_F1_mean": 0.9813,
+      "CV_F1_std": 0.0096,
+      "train_time_s": 5.25
+    },
+    "per_class_report": {
+      "Low": {
+        "precision": 0.9893617021276596,
+        "recall": 0.9893617021276596,
+        "f1-score": 0.9893617021276596,
+        "support": 94.0
+      },
+      "Moderate": {
+        "precision": 0.989247311827957,
+        "recall": 0.989247311827957,
+        "f1-score": 0.989247311827957,
+        "support": 93.0
+      },
+      "High": {
+        "precision": 0.9893617021276596,
+        "recall": 1.0,
+        "f1-score": 0.9946524064171123,
+        "support": 93.0
+      },
+      "Extreme": {
+        "precision": 1.0,
+        "recall": 0.9893617021276596,
+        "f1-score": 0.9946524064171123,
+        "support": 94.0
+      }
+    }
+  },
+  "thresholds": {
+    "Low": "< 27.9",
+    "Moderate": "27.9 - 35.8",
+    "High": "35.8 - 45.1",
+    "Extreme": ">= 45.1"
+  },
+  "correlation_analysis": {
+    "high_corr_pairs": [
+      [
+        "MNDWI",
+        "NDWI",
+        0.9742
+      ],
+      [
+        "SAVI",
+        "NDVI",
+        1.0
+      ],
+      [
+        "Street_Width_Proxy",
+        "Road_Density_Proxy",
+        0.9692
+      ],
+      [
+        "Cloud_Cover_Proxy",
+        "SolarRadiation",
+        1.0
+      ],
+      [
+        "UTFVI",
+        "UHI_Intensity",
+        1.0
+      ],
+      [
+        "LULC_ESA_Built_up",
+        "Impervious_Frac",
+        1.0
+      ]
+    ],
+    "removed": [
+      "Road_Density_Proxy",
+      "UTFVI",
+      "NDWI",
+      "NDVI",
+      "Cloud_Cover_Proxy",
+      "Impervious_Frac"
+    ]
+  },
+  "engineering_log": [
+    {
+      "time": "18:25:01",
+      "msg": "Loaded UrbanHeatAI\\data\\final\\master_dataset.csv: 1869 rows x 92 cols"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "HeatScore component: LST (weight=0.40) - primary surface temperature"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "HeatScore component: UHI_Intensity (weight=0.25) - urban heat island effect"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "HeatScore component: UTFVI (weight=0.15) - thermal field variance"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "HeatScore component: Anthropogenic_Heat (weight=0.10) - waste heat proxy"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "HeatScore component: Impervious_Frac (weight=0.10) - sealed surfaces"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "HeatScore range: 0.6 - 99.6 (mean=38.5, std=16.0)"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "Classification thresholds: Low<27.9, Moderate<35.8, High<45.1, Extreme>=45.1"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "Class distribution: {0: np.int64(468), 1: np.int64(467), 2: np.int64(467), 3: np.int64(467)}"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "Starting features: 87"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "DECISION: Using 52 raw features (tree models dont need normalization). Excluded 35 normalized duplicates."
+    },
+    {
+      "time": "18:25:01",
+      "msg": "Running Pearson correlation analysis..."
+    },
+    {
+      "time": "18:25:01",
+      "msg": "Removed 6 highly correlated features (r>0.95): {'Road_Density_Proxy', 'UTFVI', 'NDWI', 'NDVI', 'Cloud_Cover_Proxy', 'Impervious_Frac'}"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "  Corr pair: MNDWI <-> NDWI (r=0.9742)"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "  Corr pair: SAVI <-> NDVI (r=1.0)"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "  Corr pair: Street_Width_Proxy <-> Road_Density_Proxy (r=0.9692)"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "  Corr pair: Cloud_Cover_Proxy <-> SolarRadiation (r=1.0)"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "  Corr pair: UTFVI <-> UHI_Intensity (r=1.0)"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "  Corr pair: LULC_ESA_Built_up <-> Impervious_Frac (r=1.0)"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "Features after correlation filter: 46"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "Train: 1495 samples | Test: 374 samples"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "Train class distribution: {0: np.int64(374), 1: np.int64(374), 2: np.int64(374), 3: np.int64(373)}"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "Test class distribution:  {0: np.int64(94), 1: np.int64(93), 2: np.int64(93), 3: np.int64(94)}"
+    },
+    {
+      "time": "18:25:01",
+      "msg": "Running RFECV (this may take a few minutes)..."
+    },
+    {
+      "time": "18:25:33",
+      "msg": "RFECV optimal features: 10 out of 46"
+    },
+    {
+      "time": "18:25:33",
+      "msg": "RFECV best CV score: 0.9726"
+    },
+    {
+      "time": "18:25:33",
+      "msg": "Selected features: ['NDBI', 'MNDWI', 'LULC_ESA', 'Population_Density', 'Building_Density', 'Building_Volume', 'Dist_Green', 'Nighttime_Lights', 'UHI_Intensity', 'Anthropogenic_Heat']"
+    },
+    {
+      "time": "18:25:33",
+      "msg": "Final feature set: 10 features"
+    },
+    {
+      "time": "18:25:38",
+      "msg": "RandomForest REG: RMSE=1.735, MAE=1.098, R2=0.9888, CV_R2=0.9827+-0.0054, Time=0.6s"
+    },
+    {
+      "time": "18:25:43",
+      "msg": "RandomForest CLS: Acc=0.9706, F1=0.9706, ROC-AUC=0.9990, CV_F1=0.9726+-0.0065, Time=0.7s"
+    },
+    {
+      "time": "18:25:47",
+      "msg": "XGBoost REG: RMSE=0.660, MAE=0.466, R2=0.9984, CV_R2=0.9963+-0.0014, Time=0.7s"
+    },
+    {
+      "time": "18:25:49",
+      "msg": "XGBoost CLS: Acc=0.9866, F1=0.9867, ROC-AUC=0.9992, CV_F1=0.9813+-0.0054, Time=0.9s"
+    },
+    {
+      "time": "18:25:51",
+      "msg": "LightGBM REG: RMSE=0.801, MAE=0.509, R2=0.9976, CV_R2=0.9951+-0.0017, Time=0.5s"
+    },
+    {
+      "time": "18:25:55",
+      "msg": "LightGBM CLS: Acc=0.9840, F1=0.9840, ROC-AUC=0.9991, CV_F1=0.9813+-0.0084, Time=0.8s"
+    },
+    {
+      "time": "18:26:02",
+      "msg": "CatBoost REG: RMSE=0.558, MAE=0.366, R2=0.9988, CV_R2=0.9962+-0.0018, Time=2.0s"
+    },
+    {
+      "time": "18:26:24",
+      "msg": "CatBoost CLS: Acc=0.9893, F1=0.9893, ROC-AUC=0.9997, CV_F1=0.9812+-0.0066, Time=6.2s"
+    },
+    {
+      "time": "18:26:25",
+      "msg": "ExtraTrees REG: RMSE=2.593, MAE=2.037, R2=0.9749, CV_R2=0.9662+-0.0055, Time=0.3s"
+    },
+    {
+      "time": "18:26:27",
+      "msg": "ExtraTrees CLS: Acc=0.9519, F1=0.9521, ROC-AUC=0.9967, CV_F1=0.9393+-0.0151, Time=0.5s"
+    },
+    {
+      "time": "18:26:29",
+      "msg": "GradientBoosting REG: RMSE=0.359, MAE=0.175, R2=0.9995, CV_R2=0.9985+-0.0010, Time=1.3s"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "GradientBoosting CLS: Acc=0.9920, F1=0.9920, ROC-AUC=0.9987, CV_F1=0.9813+-0.0096, Time=5.2s"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "RandomForest: Composite=0.9196 (R2=0.989, F1=0.971, ROC=0.999)"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "XGBoost: Composite=0.9698 (R2=0.998, F1=0.987, ROC=0.999)"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "LightGBM: Composite=0.9632 (R2=0.998, F1=0.984, ROC=0.999)"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "CatBoost: Composite=0.9747 (R2=0.999, F1=0.989, ROC=1.000)"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "ExtraTrees: Composite=0.8749 (R2=0.975, F1=0.952, ROC=0.997)"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "GradientBoosting: Composite=0.9833 (R2=1.000, F1=0.992, ROC=0.999)"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "BEST MODEL: GradientBoosting (composite score = 0.9833)"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "Top 10 features by native importance:"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "   1. UHI_Intensity: 0.8446"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "   2. Anthropogenic_Heat: 0.0604"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "   3. Building_Density: 0.0439"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "   4. Building_Volume: 0.0226"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "   5. NDBI: 0.0137"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "   6. Population_Density: 0.0103"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "   7. Nighttime_Lights: 0.0039"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "   8. MNDWI: 0.0003"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "   9. Dist_Green: 0.0003"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "  10. LULC_ESA: 0.0001"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "Computing permutation importance (regression model)..."
+    },
+    {
+      "time": "18:26:40",
+      "msg": "Top 10 by permutation importance:"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "  Dist_Green: 1.3980 +/- 0.0996"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "  LULC_ESA: 0.0317 +/- 0.0020"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "  NDBI: 0.0060 +/- 0.0004"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "  Population_Density: 0.0044 +/- 0.0004"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "  UHI_Intensity: 0.0032 +/- 0.0003"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "  Building_Volume: 0.0011 +/- 0.0001"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "  MNDWI: 0.0008 +/- 0.0002"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "  Nighttime_Lights: 0.0000 +/- 0.0000"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "  Building_Density: -0.0000 +/- 0.0000"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "  Anthropogenic_Heat: -0.0000 +/- 0.0000"
+    },
+    {
+      "time": "18:26:40",
+      "msg": "Computing SHAP values (this may take a moment)..."
+    },
+    {
+      "time": "18:26:44",
+      "msg": "SHAP summary plot saved: UrbanHeatAI\\models\\output\\shap_summary.png"
+    },
+    {
+      "time": "18:26:44",
+      "msg": "Feature importance saved: UrbanHeatAI\\models\\output\\feature_importance.csv"
+    },
+    {
+      "time": "18:26:44",
+      "msg": "Confusion matrix saved: UrbanHeatAI\\models\\output\\confusion_matrix.png"
+    },
+    {
+      "time": "18:26:44",
+      "msg": "Per-class classification report:"
+    },
+    {
+      "time": "18:26:44",
+      "msg": "  Low       : Precision=0.989, Recall=0.989, F1=0.989"
+    },
+    {
+      "time": "18:26:44",
+      "msg": "  Moderate  : Precision=0.989, Recall=0.989, F1=0.989"
+    },
+    {
+      "time": "18:26:44",
+      "msg": "  High      : Precision=0.989, Recall=1.000, F1=0.995"
+    },
+    {
+      "time": "18:26:44",
+      "msg": "  Extreme   : Precision=1.000, Recall=0.989, F1=0.995"
+    },
+    {
+      "time": "18:26:44",
+      "msg": "trained_model.pkl saved (4400.5 KB)"
+    }
+  ]
+}

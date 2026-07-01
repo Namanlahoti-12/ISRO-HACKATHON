@@ -1,0 +1,32 @@
+# Python Dependencies for Urban Heat AI
+# Install: pip install -r requirements.txt
+
+# Core data processing
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Machine Learning
+scikit-learn>=1.3.0
+xgboost>=2.0.0
+lightgbm>=4.0.0
+catboost>=1.2.0
+
+# Explainability
+shap>=0.43.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Web Backend (for Scenario Simulator dashboard)
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# Geospatial (optional, for local raster processing)
+# Uncomment these if you need to process GeoTIFFs locally:
+# rasterio>=1.3.0
+# geopandas>=0.14.0
+# shapely>=2.0.0
+
+# Interactive maps (optional)
+# folium>=0.14.0

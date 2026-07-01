@@ -1,0 +1,3313 @@
+{
+  "metadata": {
+    "generated_at": "2026-06-30T10:04:41.431093",
+    "city": "Delhi",
+    "pipeline": "UrbanHeatAI Cooling Optimization Engine v1.0",
+    "model": "GradientBoosting (R²=0.9995)",
+    "optimization": "NSGA-II Multi-Objective"
+  },
+  "summary": {
+    "total_hotspot_zones": 5,
+    "total_pareto_solutions": 59,
+    "best_predicted_reduction": 0.64,
+    "best_estimated_cooling_celsius": 8.45,
+    "best_total_cost": 3721681.0,
+    "best_feasibility": 0.741
+  },
+  "best_recommendation": {
+    "priority_rank": 1,
+    "priority_score": 6.98,
+    "predicted_heat_score_reduction": 0.64,
+    "estimated_cooling_celsius": 8.45,
+    "total_cost_usd": 3721681.0,
+    "avg_feasibility": 0.741,
+    "confidence": 0.95,
+    "interventions": [
+      {
+        "id": "street_trees",
+        "name": "Street Trees",
+        "category": "green",
+        "coverage_pct": 42.0,
+        "cooling_potential": {
+          "min": 1.0,
+          "max": 3.5,
+          "typical": 2.0
+        },
+        "cost_per_unit": {
+          "value": 500,
+          "unit": "USD/tree",
+          "annual_maintenance": 75
+        },
+        "feasibility_score": 0.85,
+        "indian_suitability": "high"
+      },
+      {
+        "id": "urban_forests",
+        "name": "Urban Forests / Miyawaki Forests",
+        "category": "green",
+        "coverage_pct": 45.0,
+        "cooling_potential": {
+          "min": 2.0,
+          "max": 5.0,
+          "typical": 3.0
+        },
+        "cost_per_unit": {
+          "value": 15000,
+          "unit": "USD/hectare",
+          "annual_maintenance": 2000
+        },
+        "feasibility_score": 0.7,
+        "indian_suitability": "high"
+      },
+      {
+        "id": "pocket_parks",
+        "name": "Pocket Parks",
+        "category": "green",
+        "coverage_pct": 20.0,
+        "cooling_potential": {
+          "min": 0.5,
+          "max": 2.5,
+          "typical": 1.5
+        },
+        "cost_per_unit": {
+          "value": 25000,
+          "unit": "USD/park",
+          "annual_maintenance": 3000
+        },
+        "feasibility_score": 0.8,
+        "indian_suitability": "high"
+      },
+      {
+        "id": "green_roofs",
+        "name": "Green Roofs",
+        "category": "green",
+        "coverage_pct": 60.0,
+        "cooling_potential": {
+          "min": 0.5,
+          "max": 3.0,
+          "typical": 1.5
+        },
+        "cost_per_unit": {
+          "value": 120,
+          "unit": "USD/sqm",
+          "annual_maintenance": 8
+        },
+        "feasibility_score": 0.75,
+        "indian_suitability": "medium"
+      },
+      {
+        "id": "vertical_gardens",
+        "name": "Vertical Gardens",
+        "category": "green",
+        "coverage_pct": 25.0,
+        "cooling_potential": {
+          "min": 0.2,
+          "max": 1.0,
+          "typical": 0.5
+        },
+        "cost_per_unit": {
+          "value": 180,
+          "unit": "USD/sqm",
+          "annual_maintenance": 12
+        },
+        "feasibility_score": 0.7,
+        "indian_suitability": "medium"
+      },
+      {
+        "id": "bioswales",
+        "name": "Bioswales",
+        "category": "green",
+        "coverage_pct": 54.0,
+        "cooling_potential": {
+          "min": 0.3,
+          "max": 1.5,
+          "typical": 0.8
+        },
+        "cost_per_unit": {
+          "value": 60,
+          "unit": "USD/linear meter",
+          "annual_maintenance": 5
+        },
+        "feasibility_score": 0.8,
+        "indian_suitability": "high"
+      },
+      {
+        "id": "cool_pavements",
+        "name": "Cool Pavements",
+        "category": "white",
+        "coverage_pct": 70.0,
+        "cooling_potential": {
+          "min": 0.5,
+          "max": 2.5,
+          "typical": 1.2
+        },
+        "cost_per_unit": {
+          "value": 25,
+          "unit": "USD/sqm",
+          "annual_maintenance": 2
+        },
+        "feasibility_score": 0.8,
+        "indian_suitability": "high"
+      },
+      {
+        "id": "high_albedo_materials",
+        "name": "High Albedo Materials",
+        "category": "white",
+        "coverage_pct": 70.0,
+        "cooling_potential": {
+          "min": 0.2,
+          "max": 1.5,
+          "typical": 0.7
+        },
+        "cost_per_unit": {
+          "value": 10,
+          "unit": "USD/sqm",
+          "annual_maintenance": 1
+        },
+        "feasibility_score": 0.9,
+        "indian_suitability": "very_high"
+      },
+      {
+        "id": "lake_restoration",
+        "name": "Lake Restoration",
+        "category": "blue",
+        "coverage_pct": 72.0,
+        "cooling_potential": {
+          "min": 2.0,
+          "max": 6.0,
+          "typical": 3.5
+        },
+        "cost_per_unit": {
+          "value": 500000,
+          "unit": "USD/lake",
+          "annual_maintenance": 25000
+        },
+        "feasibility_score": 0.5,
+        "indian_suitability": "very_high"
+      },
+      {
+        "id": "jaali_structures",
+        "name": "Jaali (Lattice Screen) Structures",
+        "category": "grey",
+        "coverage_pct": 57.0,
+        "cooling_potential": {
+          "min": 0.5,
+          "max": 2.0,
+          "typical": 1.0
+        },
+        "cost_per_unit": {
+          "value": 60,
+          "unit": "USD/sqm",
+          "annual_maintenance": 2
+        },
+        "feasibility_score": 0.75,
+        "indian_suitability": "very_high"
+      },
+      {
+        "id": "building_orientation",
+        "name": "Building Orientation Optimization",
+        "category": "grey",
+        "coverage_pct": 10.0,
+        "cooling_potential": {
+          "min": 0.3,
+          "max": 1.5,
+          "typical": 0.8
+        },
+        "cost_per_unit": {
+          "value": 0,
+          "unit": "design parameter",
+          "annual_maintenance": 0
+        },
+        "feasibility_score": 0.6,
+        "indian_suitability": "high"
+      }
+    ],
+    "co_benefits": [
+      "Aesthetic value",
+      "Aesthetic/architectural value",
+      "Air quality improvement",
+      "Better night visibility",
+      "Biodiversity habitat",
+      "Biodiversity hotspot",
+      "Biodiversity support",
+      "Building insulation (20-30% energy savings)",
+      "Carbon sequestration",
+      "Children's play area",
+      "Community gathering space",
+      "Cross ventilation",
+      "Cultural heritage preservation",
+      "Cultural/heritage value",
+      "Educational value",
+      "Extended roof lifespan",
+      "Flood buffering",
+      "Flood mitigation",
+      "Flood risk reduction",
+      "Food production potential",
+      "Groundwater recharge",
+      "Improved visual comfort",
+      "Low-tech solution",
+      "Lower street-level air temperature",
+      "Major carbon sequestration",
+      "Mental health benefits",
+      "Natural daylighting",
+      "No additional cost",
+      "Noise insulation",
+      "Noise reduction",
+      "Privacy screening",
+      "Property value increase",
+      "Recreational amenity",
+      "Recreational space",
+      "Reduced cooling energy",
+      "Reduced stormwater runoff",
+      "Reduced tire wear",
+      "Solar PV optimization",
+      "Stormwater infiltration",
+      "Stormwater management",
+      "Stormwater retention (50-90%)",
+      "Urban agriculture potential",
+      "Urban beautification",
+      "Water quality improvement",
+      "Wind velocity modulation"
+    ]
+  },
+  "all_recommendations": [
+    {
+      "priority_rank": 1,
+      "priority_score": 6.98,
+      "predicted_heat_score_reduction": 0.64,
+      "estimated_cooling_celsius": 8.45,
+      "total_cost_usd": 3721681.0,
+      "avg_feasibility": 0.741,
+      "confidence": 0.95,
+      "interventions": [
+        {
+          "id": "street_trees",
+          "name": "Street Trees",
+          "category": "green",
+          "coverage_pct": 42.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 3.5,
+            "typical": 2.0
+          },
+          "cost_per_unit": {
+            "value": 500,
+            "unit": "USD/tree",
+            "annual_maintenance": 75
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "urban_forests",
+          "name": "Urban Forests / Miyawaki Forests",
+          "category": "green",
+          "coverage_pct": 45.0,
+          "cooling_potential": {
+            "min": 2.0,
+            "max": 5.0,
+            "typical": 3.0
+          },
+          "cost_per_unit": {
+            "value": 15000,
+            "unit": "USD/hectare",
+            "annual_maintenance": 2000
+          },
+          "feasibility_score": 0.7,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "pocket_parks",
+          "name": "Pocket Parks",
+          "category": "green",
+          "coverage_pct": 20.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 25000,
+            "unit": "USD/park",
+            "annual_maintenance": 3000
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "green_roofs",
+          "name": "Green Roofs",
+          "category": "green",
+          "coverage_pct": 60.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 3.0,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 120,
+            "unit": "USD/sqm",
+            "annual_maintenance": 8
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "vertical_gardens",
+          "name": "Vertical Gardens",
+          "category": "green",
+          "coverage_pct": 25.0,
+          "cooling_potential": {
+            "min": 0.2,
+            "max": 1.0,
+            "typical": 0.5
+          },
+          "cost_per_unit": {
+            "value": 180,
+            "unit": "USD/sqm",
+            "annual_maintenance": 12
+          },
+          "feasibility_score": 0.7,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "bioswales",
+          "name": "Bioswales",
+          "category": "green",
+          "coverage_pct": 54.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 60,
+            "unit": "USD/linear meter",
+            "annual_maintenance": 5
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "cool_pavements",
+          "name": "Cool Pavements",
+          "category": "white",
+          "coverage_pct": 70.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.2
+          },
+          "cost_per_unit": {
+            "value": 25,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "high_albedo_materials",
+          "name": "High Albedo Materials",
+          "category": "white",
+          "coverage_pct": 70.0,
+          "cooling_potential": {
+            "min": 0.2,
+            "max": 1.5,
+            "typical": 0.7
+          },
+          "cost_per_unit": {
+            "value": 10,
+            "unit": "USD/sqm",
+            "annual_maintenance": 1
+          },
+          "feasibility_score": 0.9,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "lake_restoration",
+          "name": "Lake Restoration",
+          "category": "blue",
+          "coverage_pct": 72.0,
+          "cooling_potential": {
+            "min": 2.0,
+            "max": 6.0,
+            "typical": 3.5
+          },
+          "cost_per_unit": {
+            "value": 500000,
+            "unit": "USD/lake",
+            "annual_maintenance": 25000
+          },
+          "feasibility_score": 0.5,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "jaali_structures",
+          "name": "Jaali (Lattice Screen) Structures",
+          "category": "grey",
+          "coverage_pct": 57.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 60,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "building_orientation",
+          "name": "Building Orientation Optimization",
+          "category": "grey",
+          "coverage_pct": 10.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 0,
+            "unit": "design parameter",
+            "annual_maintenance": 0
+          },
+          "feasibility_score": 0.6,
+          "indian_suitability": "high"
+        }
+      ],
+      "co_benefits": [
+        "Aesthetic value",
+        "Aesthetic/architectural value",
+        "Air quality improvement",
+        "Better night visibility",
+        "Biodiversity habitat",
+        "Biodiversity hotspot",
+        "Biodiversity support",
+        "Building insulation (20-30% energy savings)",
+        "Carbon sequestration",
+        "Children's play area",
+        "Community gathering space",
+        "Cross ventilation",
+        "Cultural heritage preservation",
+        "Cultural/heritage value",
+        "Educational value",
+        "Extended roof lifespan",
+        "Flood buffering",
+        "Flood mitigation",
+        "Flood risk reduction",
+        "Food production potential",
+        "Groundwater recharge",
+        "Improved visual comfort",
+        "Low-tech solution",
+        "Lower street-level air temperature",
+        "Major carbon sequestration",
+        "Mental health benefits",
+        "Natural daylighting",
+        "No additional cost",
+        "Noise insulation",
+        "Noise reduction",
+        "Privacy screening",
+        "Property value increase",
+        "Recreational amenity",
+        "Recreational space",
+        "Reduced cooling energy",
+        "Reduced stormwater runoff",
+        "Reduced tire wear",
+        "Solar PV optimization",
+        "Stormwater infiltration",
+        "Stormwater management",
+        "Stormwater retention (50-90%)",
+        "Urban agriculture potential",
+        "Urban beautification",
+        "Water quality improvement",
+        "Wind velocity modulation"
+      ]
+    },
+    {
+      "priority_rank": 2,
+      "priority_score": 6.85,
+      "predicted_heat_score_reduction": 0.33,
+      "estimated_cooling_celsius": 8.09,
+      "total_cost_usd": 702554.0,
+      "avg_feasibility": 0.638,
+      "confidence": 0.95,
+      "interventions": [
+        {
+          "id": "pocket_parks",
+          "name": "Pocket Parks",
+          "category": "green",
+          "coverage_pct": 36.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 25000,
+            "unit": "USD/park",
+            "annual_maintenance": 3000
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "green_walls",
+          "name": "Green Walls / Living Walls",
+          "category": "green",
+          "coverage_pct": 45.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 200,
+            "unit": "USD/sqm",
+            "annual_maintenance": 15
+          },
+          "feasibility_score": 0.65,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "cool_pavements",
+          "name": "Cool Pavements",
+          "category": "white",
+          "coverage_pct": 9.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.2
+          },
+          "cost_per_unit": {
+            "value": 25,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "ponds",
+          "name": "Ponds / Retention Basins",
+          "category": "blue",
+          "coverage_pct": 78.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 30000,
+            "unit": "USD/pond",
+            "annual_maintenance": 2000
+          },
+          "feasibility_score": 0.7,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "water_channels",
+          "name": "Water Channels / Urban Canals",
+          "category": "blue",
+          "coverage_pct": 48.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 3.0,
+            "typical": 1.8
+          },
+          "cost_per_unit": {
+            "value": 200,
+            "unit": "USD/linear meter",
+            "annual_maintenance": 10
+          },
+          "feasibility_score": 0.55,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "fountains",
+          "name": "Fountains / Water Features",
+          "category": "blue",
+          "coverage_pct": 46.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 10000,
+            "unit": "USD/fountain",
+            "annual_maintenance": 1500
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "wind_corridors",
+          "name": "Wind Corridors",
+          "category": "grey",
+          "coverage_pct": 36.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 3.5,
+            "typical": 2.0
+          },
+          "cost_per_unit": {
+            "value": 50000,
+            "unit": "USD/corridor",
+            "annual_maintenance": 1000
+          },
+          "feasibility_score": 0.4,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "building_spacing",
+          "name": "Building Spacing Optimization",
+          "category": "grey",
+          "coverage_pct": 43.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 0,
+            "unit": "policy instrument",
+            "annual_maintenance": 0
+          },
+          "feasibility_score": 0.45,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "artificial_shading",
+          "name": "Artificial Shading Structures",
+          "category": "grey",
+          "coverage_pct": 69.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 4.0,
+            "typical": 2.5
+          },
+          "cost_per_unit": {
+            "value": 80,
+            "unit": "USD/sqm",
+            "annual_maintenance": 5
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "jaali_structures",
+          "name": "Jaali (Lattice Screen) Structures",
+          "category": "grey",
+          "coverage_pct": 20.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 60,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "building_orientation",
+          "name": "Building Orientation Optimization",
+          "category": "grey",
+          "coverage_pct": 69.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 0,
+            "unit": "design parameter",
+            "annual_maintenance": 0
+          },
+          "feasibility_score": 0.6,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "ventilation_corridors",
+          "name": "Ventilation Corridors",
+          "category": "grey",
+          "coverage_pct": 50.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 30000,
+            "unit": "USD/corridor",
+            "annual_maintenance": 500
+          },
+          "feasibility_score": 0.35,
+          "indian_suitability": "medium"
+        }
+      ],
+      "co_benefits": [
+        "Aesthetic enhancement",
+        "Aesthetic improvement",
+        "Aesthetic value",
+        "Aesthetic/architectural value",
+        "Aesthetic/heritage value",
+        "Air quality at pedestrian level",
+        "Air quality improvement",
+        "Aquaculture potential",
+        "Better daylighting",
+        "Better night visibility",
+        "Building cooling load reduction",
+        "Children's play area",
+        "Community gathering space",
+        "Cross ventilation",
+        "Cultural heritage preservation",
+        "Green belt potential",
+        "Immediate effect",
+        "Improved air quality",
+        "Improved living conditions",
+        "Linear green corridor potential",
+        "Lower street-level air temperature",
+        "Microclimate regulation",
+        "Natural daylighting",
+        "Natural ventilation",
+        "Natural ventilation for buildings",
+        "No additional cost",
+        "Noise buffering",
+        "Noise reduction",
+        "Pedestrian comfort",
+        "Pedestrian/cyclist pathway",
+        "Privacy screening",
+        "Property value increase",
+        "Psychological cooling",
+        "Rain shelter",
+        "Reduced AC dependency",
+        "Reduced canyon heating effect",
+        "Reduced stormwater runoff",
+        "Reduced tire wear",
+        "Solar PV optimization",
+        "Solar energy generation (if PV panels)",
+        "Stormwater conveyance",
+        "Stormwater infiltration",
+        "Stormwater retention",
+        "Tourism attraction",
+        "Transportation (some cases)",
+        "UV protection",
+        "White noise (masks traffic)",
+        "Wind velocity modulation"
+      ]
+    },
+    {
+      "priority_rank": 3,
+      "priority_score": 6.53,
+      "predicted_heat_score_reduction": 0.45,
+      "estimated_cooling_celsius": 6.44,
+      "total_cost_usd": 1743174.0,
+      "avg_feasibility": 0.682,
+      "confidence": 0.95,
+      "interventions": [
+        {
+          "id": "street_trees",
+          "name": "Street Trees",
+          "category": "green",
+          "coverage_pct": 74.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 3.5,
+            "typical": 2.0
+          },
+          "cost_per_unit": {
+            "value": 500,
+            "unit": "USD/tree",
+            "annual_maintenance": 75
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "green_walls",
+          "name": "Green Walls / Living Walls",
+          "category": "green",
+          "coverage_pct": 79.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 200,
+            "unit": "USD/sqm",
+            "annual_maintenance": 15
+          },
+          "feasibility_score": 0.65,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "urban_agriculture",
+          "name": "Urban Agriculture",
+          "category": "green",
+          "coverage_pct": 41.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 8000,
+            "unit": "USD/hectare",
+            "annual_maintenance": 1500
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "cool_pavements",
+          "name": "Cool Pavements",
+          "category": "white",
+          "coverage_pct": 34.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.2
+          },
+          "cost_per_unit": {
+            "value": 25,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "high_albedo_materials",
+          "name": "High Albedo Materials",
+          "category": "white",
+          "coverage_pct": 21.0,
+          "cooling_potential": {
+            "min": 0.2,
+            "max": 1.5,
+            "typical": 0.7
+          },
+          "cost_per_unit": {
+            "value": 10,
+            "unit": "USD/sqm",
+            "annual_maintenance": 1
+          },
+          "feasibility_score": 0.9,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "lake_restoration",
+          "name": "Lake Restoration",
+          "category": "blue",
+          "coverage_pct": 27.0,
+          "cooling_potential": {
+            "min": 2.0,
+            "max": 6.0,
+            "typical": 3.5
+          },
+          "cost_per_unit": {
+            "value": 500000,
+            "unit": "USD/lake",
+            "annual_maintenance": 25000
+          },
+          "feasibility_score": 0.5,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "urban_wetlands",
+          "name": "Urban Wetlands",
+          "category": "blue",
+          "coverage_pct": 25.0,
+          "cooling_potential": {
+            "min": 1.5,
+            "max": 4.0,
+            "typical": 2.5
+          },
+          "cost_per_unit": {
+            "value": 100000,
+            "unit": "USD/hectare",
+            "annual_maintenance": 5000
+          },
+          "feasibility_score": 0.55,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "ponds",
+          "name": "Ponds / Retention Basins",
+          "category": "blue",
+          "coverage_pct": 8.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 30000,
+            "unit": "USD/pond",
+            "annual_maintenance": 2000
+          },
+          "feasibility_score": 0.7,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "water_channels",
+          "name": "Water Channels / Urban Canals",
+          "category": "blue",
+          "coverage_pct": 39.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 3.0,
+            "typical": 1.8
+          },
+          "cost_per_unit": {
+            "value": 200,
+            "unit": "USD/linear meter",
+            "annual_maintenance": 10
+          },
+          "feasibility_score": 0.55,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "wind_corridors",
+          "name": "Wind Corridors",
+          "category": "grey",
+          "coverage_pct": 16.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 3.5,
+            "typical": 2.0
+          },
+          "cost_per_unit": {
+            "value": 50000,
+            "unit": "USD/corridor",
+            "annual_maintenance": 1000
+          },
+          "feasibility_score": 0.4,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "artificial_shading",
+          "name": "Artificial Shading Structures",
+          "category": "grey",
+          "coverage_pct": 26.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 4.0,
+            "typical": 2.5
+          },
+          "cost_per_unit": {
+            "value": 80,
+            "unit": "USD/sqm",
+            "annual_maintenance": 5
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "very_high"
+        }
+      ],
+      "co_benefits": [
+        "Aesthetic improvement",
+        "Aesthetic value",
+        "Aesthetic/heritage value",
+        "Air quality at pedestrian level",
+        "Air quality improvement",
+        "Aquaculture potential",
+        "Better night visibility",
+        "Biodiversity habitat",
+        "Biodiversity support",
+        "Building cooling load reduction",
+        "Carbon sequestration",
+        "Community engagement",
+        "Cultural/heritage value",
+        "Educational value",
+        "Flood attenuation",
+        "Flood buffering",
+        "Food security",
+        "Groundwater recharge",
+        "Immediate effect",
+        "Improved air quality",
+        "Improved visual comfort",
+        "Income generation",
+        "Linear green corridor potential",
+        "Low-tech solution",
+        "Lower street-level air temperature",
+        "Mental health benefits",
+        "Microclimate regulation",
+        "Natural ventilation for buildings",
+        "Natural water filtration",
+        "Noise reduction",
+        "Pedestrian comfort",
+        "Rain shelter",
+        "Recreational amenity",
+        "Reduced AC dependency",
+        "Reduced cooling energy",
+        "Reduced stormwater runoff",
+        "Reduced tire wear",
+        "Solar energy generation (if PV panels)",
+        "Stormwater conveyance",
+        "Stormwater management",
+        "Stormwater retention",
+        "Transportation (some cases)",
+        "UV protection"
+      ]
+    },
+    {
+      "priority_rank": 4,
+      "priority_score": 6.49,
+      "predicted_heat_score_reduction": 0.44,
+      "estimated_cooling_celsius": 7.82,
+      "total_cost_usd": 777108.0,
+      "avg_feasibility": 0.737,
+      "confidence": 0.95,
+      "interventions": [
+        {
+          "id": "street_trees",
+          "name": "Street Trees",
+          "category": "green",
+          "coverage_pct": 75.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 3.5,
+            "typical": 2.0
+          },
+          "cost_per_unit": {
+            "value": 500,
+            "unit": "USD/tree",
+            "annual_maintenance": 75
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "reflective_roof_coatings",
+          "name": "Reflective Roof Coatings",
+          "category": "white",
+          "coverage_pct": 39.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 5,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.95,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "cool_pavements",
+          "name": "Cool Pavements",
+          "category": "white",
+          "coverage_pct": 37.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.2
+          },
+          "cost_per_unit": {
+            "value": 25,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "reflective_concrete",
+          "name": "Reflective Concrete",
+          "category": "white",
+          "coverage_pct": 76.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 35,
+            "unit": "USD/sqm",
+            "annual_maintenance": 1
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "urban_wetlands",
+          "name": "Urban Wetlands",
+          "category": "blue",
+          "coverage_pct": 55.0,
+          "cooling_potential": {
+            "min": 1.5,
+            "max": 4.0,
+            "typical": 2.5
+          },
+          "cost_per_unit": {
+            "value": 100000,
+            "unit": "USD/hectare",
+            "annual_maintenance": 5000
+          },
+          "feasibility_score": 0.55,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "ponds",
+          "name": "Ponds / Retention Basins",
+          "category": "blue",
+          "coverage_pct": 37.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 30000,
+            "unit": "USD/pond",
+            "annual_maintenance": 2000
+          },
+          "feasibility_score": 0.7,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "rain_gardens",
+          "name": "Rain Gardens",
+          "category": "blue",
+          "coverage_pct": 70.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.7
+          },
+          "cost_per_unit": {
+            "value": 40,
+            "unit": "USD/sqm",
+            "annual_maintenance": 3
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "permeable_pavements",
+          "name": "Permeable Pavements",
+          "category": "blue",
+          "coverage_pct": 35.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 45,
+            "unit": "USD/sqm",
+            "annual_maintenance": 3
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "artificial_shading",
+          "name": "Artificial Shading Structures",
+          "category": "grey",
+          "coverage_pct": 22.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 4.0,
+            "typical": 2.5
+          },
+          "cost_per_unit": {
+            "value": 80,
+            "unit": "USD/sqm",
+            "annual_maintenance": 5
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "jaali_structures",
+          "name": "Jaali (Lattice Screen) Structures",
+          "category": "grey",
+          "coverage_pct": 33.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 60,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "ventilation_corridors",
+          "name": "Ventilation Corridors",
+          "category": "grey",
+          "coverage_pct": 37.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 30000,
+            "unit": "USD/corridor",
+            "annual_maintenance": 500
+          },
+          "feasibility_score": 0.35,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "impervious_surface_reduction",
+          "name": "Impervious Surface Reduction",
+          "category": "grey",
+          "coverage_pct": 56.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.2
+          },
+          "cost_per_unit": {
+            "value": 30,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        }
+      ],
+      "co_benefits": [
+        "Aesthetic value",
+        "Aesthetic/architectural value",
+        "Air quality improvement",
+        "Aquaculture potential",
+        "Beautification",
+        "Better night visibility",
+        "Biodiversity habitat",
+        "Biodiversity support",
+        "Carbon sequestration",
+        "Community-applied (unskilled labor)",
+        "Cultural heritage preservation",
+        "Durable surface",
+        "Flood attenuation",
+        "Green belt potential",
+        "Groundwater recharge",
+        "Immediate effect",
+        "Lower maintenance than asphalt",
+        "Lower street-level air temperature",
+        "Mental health benefits",
+        "Microclimate regulation",
+        "Natural water filtration",
+        "Noise buffering",
+        "Pedestrian/cyclist pathway",
+        "Pollutant removal",
+        "Privacy screening",
+        "Quick implementation",
+        "Rain shelter",
+        "Reduced flooding",
+        "Reduced lighting needs (reflective)",
+        "Reduced stormwater runoff",
+        "Reduced tire noise",
+        "Reduced tire wear",
+        "Soil health improvement",
+        "Solar energy generation (if PV panels)",
+        "Stormwater infiltration",
+        "Stormwater management",
+        "Stormwater retention",
+        "Traditional practice in India",
+        "UV protection",
+        "Very low cost",
+        "Wind velocity modulation"
+      ]
+    },
+    {
+      "priority_rank": 5,
+      "priority_score": 6.36,
+      "predicted_heat_score_reduction": 0.77,
+      "estimated_cooling_celsius": 6.76,
+      "total_cost_usd": 290940.0,
+      "avg_feasibility": 0.785,
+      "confidence": 0.95,
+      "interventions": [
+        {
+          "id": "street_trees",
+          "name": "Street Trees",
+          "category": "green",
+          "coverage_pct": 79.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 3.5,
+            "typical": 2.0
+          },
+          "cost_per_unit": {
+            "value": 500,
+            "unit": "USD/tree",
+            "annual_maintenance": 75
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "urban_forests",
+          "name": "Urban Forests / Miyawaki Forests",
+          "category": "green",
+          "coverage_pct": 56.0,
+          "cooling_potential": {
+            "min": 2.0,
+            "max": 5.0,
+            "typical": 3.0
+          },
+          "cost_per_unit": {
+            "value": 15000,
+            "unit": "USD/hectare",
+            "annual_maintenance": 2000
+          },
+          "feasibility_score": 0.7,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "pocket_parks",
+          "name": "Pocket Parks",
+          "category": "green",
+          "coverage_pct": 52.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 25000,
+            "unit": "USD/park",
+            "annual_maintenance": 3000
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "green_walls",
+          "name": "Green Walls / Living Walls",
+          "category": "green",
+          "coverage_pct": 12.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 200,
+            "unit": "USD/sqm",
+            "annual_maintenance": 15
+          },
+          "feasibility_score": 0.65,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "vertical_gardens",
+          "name": "Vertical Gardens",
+          "category": "green",
+          "coverage_pct": 23.0,
+          "cooling_potential": {
+            "min": 0.2,
+            "max": 1.0,
+            "typical": 0.5
+          },
+          "cost_per_unit": {
+            "value": 180,
+            "unit": "USD/sqm",
+            "annual_maintenance": 12
+          },
+          "feasibility_score": 0.7,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "reflective_roof_coatings",
+          "name": "Reflective Roof Coatings",
+          "category": "white",
+          "coverage_pct": 71.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 5,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.95,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "high_albedo_materials",
+          "name": "High Albedo Materials",
+          "category": "white",
+          "coverage_pct": 78.0,
+          "cooling_potential": {
+            "min": 0.2,
+            "max": 1.5,
+            "typical": 0.7
+          },
+          "cost_per_unit": {
+            "value": 10,
+            "unit": "USD/sqm",
+            "annual_maintenance": 1
+          },
+          "feasibility_score": 0.9,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "rain_gardens",
+          "name": "Rain Gardens",
+          "category": "blue",
+          "coverage_pct": 39.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.7
+          },
+          "cost_per_unit": {
+            "value": 40,
+            "unit": "USD/sqm",
+            "annual_maintenance": 3
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "fountains",
+          "name": "Fountains / Water Features",
+          "category": "blue",
+          "coverage_pct": 72.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 10000,
+            "unit": "USD/fountain",
+            "annual_maintenance": 1500
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "impervious_surface_reduction",
+          "name": "Impervious Surface Reduction",
+          "category": "grey",
+          "coverage_pct": 22.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.2
+          },
+          "cost_per_unit": {
+            "value": 30,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        }
+      ],
+      "co_benefits": [
+        "Aesthetic enhancement",
+        "Aesthetic improvement",
+        "Aesthetic value",
+        "Air quality at pedestrian level",
+        "Air quality improvement",
+        "Beautification",
+        "Biodiversity hotspot",
+        "Biodiversity support",
+        "Building cooling load reduction",
+        "Carbon sequestration",
+        "Children's play area",
+        "Community gathering space",
+        "Community-applied (unskilled labor)",
+        "Educational value",
+        "Flood mitigation",
+        "Food production potential",
+        "Groundwater recharge",
+        "Improved visual comfort",
+        "Low-tech solution",
+        "Major carbon sequestration",
+        "Mental health benefits",
+        "Noise reduction",
+        "Pollutant removal",
+        "Property value increase",
+        "Psychological cooling",
+        "Quick implementation",
+        "Recreational space",
+        "Reduced cooling energy",
+        "Reduced flooding",
+        "Soil health improvement",
+        "Stormwater infiltration",
+        "Stormwater management",
+        "Tourism attraction",
+        "Traditional practice in India",
+        "Urban beautification",
+        "Very low cost",
+        "White noise (masks traffic)"
+      ]
+    },
+    {
+      "priority_rank": 6,
+      "priority_score": 6.29,
+      "predicted_heat_score_reduction": 0.52,
+      "estimated_cooling_celsius": 7.88,
+      "total_cost_usd": 2629830.0,
+      "avg_feasibility": 0.759,
+      "confidence": 0.95,
+      "interventions": [
+        {
+          "id": "pocket_parks",
+          "name": "Pocket Parks",
+          "category": "green",
+          "coverage_pct": 11.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 25000,
+            "unit": "USD/park",
+            "annual_maintenance": 3000
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "green_walls",
+          "name": "Green Walls / Living Walls",
+          "category": "green",
+          "coverage_pct": 45.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 200,
+            "unit": "USD/sqm",
+            "annual_maintenance": 15
+          },
+          "feasibility_score": 0.65,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "bioswales",
+          "name": "Bioswales",
+          "category": "green",
+          "coverage_pct": 46.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 60,
+            "unit": "USD/linear meter",
+            "annual_maintenance": 5
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "cool_roofs",
+          "name": "Cool Roofs",
+          "category": "white",
+          "coverage_pct": 69.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 3.0,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 15,
+            "unit": "USD/sqm",
+            "annual_maintenance": 1
+          },
+          "feasibility_score": 0.95,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "cool_pavements",
+          "name": "Cool Pavements",
+          "category": "white",
+          "coverage_pct": 76.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.2
+          },
+          "cost_per_unit": {
+            "value": 25,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "high_albedo_materials",
+          "name": "High Albedo Materials",
+          "category": "white",
+          "coverage_pct": 44.0,
+          "cooling_potential": {
+            "min": 0.2,
+            "max": 1.5,
+            "typical": 0.7
+          },
+          "cost_per_unit": {
+            "value": 10,
+            "unit": "USD/sqm",
+            "annual_maintenance": 1
+          },
+          "feasibility_score": 0.9,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "lake_restoration",
+          "name": "Lake Restoration",
+          "category": "blue",
+          "coverage_pct": 52.0,
+          "cooling_potential": {
+            "min": 2.0,
+            "max": 6.0,
+            "typical": 3.5
+          },
+          "cost_per_unit": {
+            "value": 500000,
+            "unit": "USD/lake",
+            "annual_maintenance": 25000
+          },
+          "feasibility_score": 0.5,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "permeable_pavements",
+          "name": "Permeable Pavements",
+          "category": "blue",
+          "coverage_pct": 57.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 45,
+            "unit": "USD/sqm",
+            "annual_maintenance": 3
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "artificial_shading",
+          "name": "Artificial Shading Structures",
+          "category": "grey",
+          "coverage_pct": 67.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 4.0,
+            "typical": 2.5
+          },
+          "cost_per_unit": {
+            "value": 80,
+            "unit": "USD/sqm",
+            "annual_maintenance": 5
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "building_orientation",
+          "name": "Building Orientation Optimization",
+          "category": "grey",
+          "coverage_pct": 72.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 0,
+            "unit": "design parameter",
+            "annual_maintenance": 0
+          },
+          "feasibility_score": 0.6,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "impervious_surface_reduction",
+          "name": "Impervious Surface Reduction",
+          "category": "grey",
+          "coverage_pct": 8.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.2
+          },
+          "cost_per_unit": {
+            "value": 30,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        }
+      ],
+      "co_benefits": [
+        "20-40% AC energy savings",
+        "Aesthetic improvement",
+        "Air quality at pedestrian level",
+        "Better night visibility",
+        "Biodiversity habitat",
+        "Building cooling load reduction",
+        "Children's play area",
+        "Community gathering space",
+        "Cross ventilation",
+        "Cultural/heritage value",
+        "Extended roof membrane life",
+        "Flood buffering",
+        "Flood risk reduction",
+        "Groundwater recharge",
+        "Immediate effect",
+        "Improved visual comfort",
+        "Low-tech solution",
+        "Lower street-level air temperature",
+        "Natural daylighting",
+        "No additional cost",
+        "Noise reduction",
+        "Peak demand reduction",
+        "Property value increase",
+        "Quick implementation",
+        "Rain shelter",
+        "Recreational amenity",
+        "Reduced cooling energy",
+        "Reduced flooding",
+        "Reduced stormwater runoff",
+        "Reduced tire noise",
+        "Reduced tire wear",
+        "Soil health improvement",
+        "Solar PV optimization",
+        "Solar energy generation (if PV panels)",
+        "Stormwater infiltration",
+        "Stormwater management",
+        "UV protection",
+        "Water quality improvement"
+      ]
+    },
+    {
+      "priority_rank": 7,
+      "priority_score": 6.17,
+      "predicted_heat_score_reduction": 0.51,
+      "estimated_cooling_celsius": 5.68,
+      "total_cost_usd": 214976.0,
+      "avg_feasibility": 0.69,
+      "confidence": 0.95,
+      "interventions": [
+        {
+          "id": "street_trees",
+          "name": "Street Trees",
+          "category": "green",
+          "coverage_pct": 39.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 3.5,
+            "typical": 2.0
+          },
+          "cost_per_unit": {
+            "value": 500,
+            "unit": "USD/tree",
+            "annual_maintenance": 75
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "green_roofs",
+          "name": "Green Roofs",
+          "category": "green",
+          "coverage_pct": 61.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 3.0,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 120,
+            "unit": "USD/sqm",
+            "annual_maintenance": 8
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "green_walls",
+          "name": "Green Walls / Living Walls",
+          "category": "green",
+          "coverage_pct": 76.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 200,
+            "unit": "USD/sqm",
+            "annual_maintenance": 15
+          },
+          "feasibility_score": 0.65,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "cool_pavements",
+          "name": "Cool Pavements",
+          "category": "white",
+          "coverage_pct": 40.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.2
+          },
+          "cost_per_unit": {
+            "value": 25,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "permeable_pavements",
+          "name": "Permeable Pavements",
+          "category": "blue",
+          "coverage_pct": 52.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 45,
+            "unit": "USD/sqm",
+            "annual_maintenance": 3
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "water_channels",
+          "name": "Water Channels / Urban Canals",
+          "category": "blue",
+          "coverage_pct": 12.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 3.0,
+            "typical": 1.8
+          },
+          "cost_per_unit": {
+            "value": 200,
+            "unit": "USD/linear meter",
+            "annual_maintenance": 10
+          },
+          "feasibility_score": 0.55,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "artificial_shading",
+          "name": "Artificial Shading Structures",
+          "category": "grey",
+          "coverage_pct": 13.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 4.0,
+            "typical": 2.5
+          },
+          "cost_per_unit": {
+            "value": 80,
+            "unit": "USD/sqm",
+            "annual_maintenance": 5
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "building_orientation",
+          "name": "Building Orientation Optimization",
+          "category": "grey",
+          "coverage_pct": 50.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 0,
+            "unit": "design parameter",
+            "annual_maintenance": 0
+          },
+          "feasibility_score": 0.6,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "ventilation_corridors",
+          "name": "Ventilation Corridors",
+          "category": "grey",
+          "coverage_pct": 70.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 30000,
+            "unit": "USD/corridor",
+            "annual_maintenance": 500
+          },
+          "feasibility_score": 0.35,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "impervious_surface_reduction",
+          "name": "Impervious Surface Reduction",
+          "category": "grey",
+          "coverage_pct": 32.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.2
+          },
+          "cost_per_unit": {
+            "value": 30,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        }
+      ],
+      "co_benefits": [
+        "Aesthetic improvement",
+        "Aesthetic value",
+        "Aesthetic/heritage value",
+        "Air quality at pedestrian level",
+        "Air quality improvement",
+        "Better night visibility",
+        "Biodiversity support",
+        "Building cooling load reduction",
+        "Building insulation (20-30% energy savings)",
+        "Carbon sequestration",
+        "Cross ventilation",
+        "Extended roof lifespan",
+        "Green belt potential",
+        "Groundwater recharge",
+        "Immediate effect",
+        "Linear green corridor potential",
+        "Lower street-level air temperature",
+        "Mental health benefits",
+        "Natural daylighting",
+        "No additional cost",
+        "Noise buffering",
+        "Noise insulation",
+        "Noise reduction",
+        "Pedestrian/cyclist pathway",
+        "Rain shelter",
+        "Reduced flooding",
+        "Reduced stormwater runoff",
+        "Reduced tire noise",
+        "Reduced tire wear",
+        "Soil health improvement",
+        "Solar PV optimization",
+        "Solar energy generation (if PV panels)",
+        "Stormwater conveyance",
+        "Stormwater infiltration",
+        "Stormwater management",
+        "Stormwater retention (50-90%)",
+        "Transportation (some cases)",
+        "UV protection",
+        "Urban agriculture potential"
+      ]
+    },
+    {
+      "priority_rank": 8,
+      "priority_score": 6.08,
+      "predicted_heat_score_reduction": 0.64,
+      "estimated_cooling_celsius": 6.4,
+      "total_cost_usd": 353580.0,
+      "avg_feasibility": 0.74,
+      "confidence": 0.95,
+      "interventions": [
+        {
+          "id": "street_trees",
+          "name": "Street Trees",
+          "category": "green",
+          "coverage_pct": 74.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 3.5,
+            "typical": 2.0
+          },
+          "cost_per_unit": {
+            "value": 500,
+            "unit": "USD/tree",
+            "annual_maintenance": 75
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "urban_forests",
+          "name": "Urban Forests / Miyawaki Forests",
+          "category": "green",
+          "coverage_pct": 50.0,
+          "cooling_potential": {
+            "min": 2.0,
+            "max": 5.0,
+            "typical": 3.0
+          },
+          "cost_per_unit": {
+            "value": 15000,
+            "unit": "USD/hectare",
+            "annual_maintenance": 2000
+          },
+          "feasibility_score": 0.7,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "pocket_parks",
+          "name": "Pocket Parks",
+          "category": "green",
+          "coverage_pct": 72.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 25000,
+            "unit": "USD/park",
+            "annual_maintenance": 3000
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "bioswales",
+          "name": "Bioswales",
+          "category": "green",
+          "coverage_pct": 30.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 60,
+            "unit": "USD/linear meter",
+            "annual_maintenance": 5
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "urban_agriculture",
+          "name": "Urban Agriculture",
+          "category": "green",
+          "coverage_pct": 20.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 8000,
+            "unit": "USD/hectare",
+            "annual_maintenance": 1500
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "reflective_concrete",
+          "name": "Reflective Concrete",
+          "category": "white",
+          "coverage_pct": 67.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.8
+          },
+          "cost_per_unit": {
+            "value": 35,
+            "unit": "USD/sqm",
+            "annual_maintenance": 1
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "rain_gardens",
+          "name": "Rain Gardens",
+          "category": "blue",
+          "coverage_pct": 74.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 1.5,
+            "typical": 0.7
+          },
+          "cost_per_unit": {
+            "value": 40,
+            "unit": "USD/sqm",
+            "annual_maintenance": 3
+          },
+          "feasibility_score": 0.8,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "permeable_pavements",
+          "name": "Permeable Pavements",
+          "category": "blue",
+          "coverage_pct": 18.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 45,
+            "unit": "USD/sqm",
+            "annual_maintenance": 3
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "artificial_shading",
+          "name": "Artificial Shading Structures",
+          "category": "grey",
+          "coverage_pct": 11.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 4.0,
+            "typical": 2.5
+          },
+          "cost_per_unit": {
+            "value": 80,
+            "unit": "USD/sqm",
+            "annual_maintenance": 5
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "ventilation_corridors",
+          "name": "Ventilation Corridors",
+          "category": "grey",
+          "coverage_pct": 26.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 30000,
+            "unit": "USD/corridor",
+            "annual_maintenance": 500
+          },
+          "feasibility_score": 0.35,
+          "indian_suitability": "medium"
+        }
+      ],
+      "co_benefits": [
+        "Aesthetic value",
+        "Air quality improvement",
+        "Beautification",
+        "Biodiversity hotspot",
+        "Biodiversity support",
+        "Carbon sequestration",
+        "Children's play area",
+        "Community engagement",
+        "Community gathering space",
+        "Durable surface",
+        "Educational value",
+        "Flood mitigation",
+        "Flood risk reduction",
+        "Food security",
+        "Green belt potential",
+        "Groundwater recharge",
+        "Immediate effect",
+        "Income generation",
+        "Lower maintenance than asphalt",
+        "Major carbon sequestration",
+        "Mental health benefits",
+        "Noise buffering",
+        "Noise reduction",
+        "Pedestrian/cyclist pathway",
+        "Pollutant removal",
+        "Property value increase",
+        "Rain shelter",
+        "Recreational space",
+        "Reduced flooding",
+        "Reduced lighting needs (reflective)",
+        "Reduced tire noise",
+        "Solar energy generation (if PV panels)",
+        "Stormwater infiltration",
+        "Stormwater management",
+        "UV protection",
+        "Water quality improvement"
+      ]
+    },
+    {
+      "priority_rank": 9,
+      "priority_score": 5.56,
+      "predicted_heat_score_reduction": 1.01,
+      "estimated_cooling_celsius": 7.4,
+      "total_cost_usd": 148868.0,
+      "avg_feasibility": 0.817,
+      "confidence": 0.9,
+      "interventions": [
+        {
+          "id": "street_trees",
+          "name": "Street Trees",
+          "category": "green",
+          "coverage_pct": 73.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 3.5,
+            "typical": 2.0
+          },
+          "cost_per_unit": {
+            "value": 500,
+            "unit": "USD/tree",
+            "annual_maintenance": 75
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "urban_forests",
+          "name": "Urban Forests / Miyawaki Forests",
+          "category": "green",
+          "coverage_pct": 96.0,
+          "cooling_potential": {
+            "min": 2.0,
+            "max": 5.0,
+            "typical": 3.0
+          },
+          "cost_per_unit": {
+            "value": 15000,
+            "unit": "USD/hectare",
+            "annual_maintenance": 2000
+          },
+          "feasibility_score": 0.7,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "green_roofs",
+          "name": "Green Roofs",
+          "category": "green",
+          "coverage_pct": 80.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 3.0,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 120,
+            "unit": "USD/sqm",
+            "annual_maintenance": 8
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "cool_roofs",
+          "name": "Cool Roofs",
+          "category": "white",
+          "coverage_pct": 69.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 3.0,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 15,
+            "unit": "USD/sqm",
+            "annual_maintenance": 1
+          },
+          "feasibility_score": 0.95,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "high_albedo_materials",
+          "name": "High Albedo Materials",
+          "category": "white",
+          "coverage_pct": 100.0,
+          "cooling_potential": {
+            "min": 0.2,
+            "max": 1.5,
+            "typical": 0.7
+          },
+          "cost_per_unit": {
+            "value": 10,
+            "unit": "USD/sqm",
+            "annual_maintenance": 1
+          },
+          "feasibility_score": 0.9,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "permeable_pavements",
+          "name": "Permeable Pavements",
+          "category": "blue",
+          "coverage_pct": 12.0,
+          "cooling_potential": {
+            "min": 0.3,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 45,
+            "unit": "USD/sqm",
+            "annual_maintenance": 3
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        }
+      ],
+      "co_benefits": [
+        "20-40% AC energy savings",
+        "Aesthetic value",
+        "Air quality improvement",
+        "Biodiversity hotspot",
+        "Biodiversity support",
+        "Building insulation (20-30% energy savings)",
+        "Carbon sequestration",
+        "Extended roof lifespan",
+        "Extended roof membrane life",
+        "Flood mitigation",
+        "Groundwater recharge",
+        "Improved visual comfort",
+        "Low-tech solution",
+        "Major carbon sequestration",
+        "Mental health benefits",
+        "Noise insulation",
+        "Noise reduction",
+        "Peak demand reduction",
+        "Quick implementation",
+        "Recreational space",
+        "Reduced cooling energy",
+        "Reduced flooding",
+        "Reduced tire noise",
+        "Stormwater infiltration",
+        "Stormwater management",
+        "Stormwater retention (50-90%)",
+        "Urban agriculture potential"
+      ]
+    },
+    {
+      "priority_rank": 10,
+      "priority_score": 5.48,
+      "predicted_heat_score_reduction": 1.0,
+      "estimated_cooling_celsius": 7.39,
+      "total_cost_usd": 152466.0,
+      "avg_feasibility": 0.792,
+      "confidence": 0.9,
+      "interventions": [
+        {
+          "id": "street_trees",
+          "name": "Street Trees",
+          "category": "green",
+          "coverage_pct": 12.0,
+          "cooling_potential": {
+            "min": 1.0,
+            "max": 3.5,
+            "typical": 2.0
+          },
+          "cost_per_unit": {
+            "value": 500,
+            "unit": "USD/tree",
+            "annual_maintenance": 75
+          },
+          "feasibility_score": 0.85,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "urban_forests",
+          "name": "Urban Forests / Miyawaki Forests",
+          "category": "green",
+          "coverage_pct": 100.0,
+          "cooling_potential": {
+            "min": 2.0,
+            "max": 5.0,
+            "typical": 3.0
+          },
+          "cost_per_unit": {
+            "value": 15000,
+            "unit": "USD/hectare",
+            "annual_maintenance": 2000
+          },
+          "feasibility_score": 0.7,
+          "indian_suitability": "high"
+        },
+        {
+          "id": "green_roofs",
+          "name": "Green Roofs",
+          "category": "green",
+          "coverage_pct": 100.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 3.0,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 120,
+            "unit": "USD/sqm",
+            "annual_maintenance": 8
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "medium"
+        },
+        {
+          "id": "cool_roofs",
+          "name": "Cool Roofs",
+          "category": "white",
+          "coverage_pct": 100.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 3.0,
+            "typical": 1.5
+          },
+          "cost_per_unit": {
+            "value": 15,
+            "unit": "USD/sqm",
+            "annual_maintenance": 1
+          },
+          "feasibility_score": 0.95,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "jaali_structures",
+          "name": "Jaali (Lattice Screen) Structures",
+          "category": "grey",
+          "coverage_pct": 65.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.0,
+            "typical": 1.0
+          },
+          "cost_per_unit": {
+            "value": 60,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "very_high"
+        },
+        {
+          "id": "impervious_surface_reduction",
+          "name": "Impervious Surface Reduction",
+          "category": "grey",
+          "coverage_pct": 42.0,
+          "cooling_potential": {
+            "min": 0.5,
+            "max": 2.5,
+            "typical": 1.2
+          },
+          "cost_per_unit": {
+            "value": 30,
+            "unit": "USD/sqm",
+            "annual_maintenance": 2
+          },
+          "feasibility_score": 0.75,
+          "indian_suitability": "high"
+        }
+      ],
+      "co_benefits": [
+        "20-40% AC energy savings",
+        "Aesthetic value",
+        "Aesthetic/architectural value",
+        "Air quality improvement",
+        "Biodiversity hotspot",
+        "Biodiversity support",
+        "Building insulation (20-30% energy savings)",
+        "Carbon sequestration",
+        "Cultural heritage preservation",
+        "Extended roof lifespan",
+        "Extended roof membrane life",
+        "Flood mitigation",
+        "Groundwater recharge",
+        "Major carbon sequestration",
+        "Mental health benefits",
+        "Noise insulation",
+        "Noise reduction",
+        "Peak demand reduction",
+        "Privacy screening",
+        "Quick implementation",
+        "Recreational space",
+        "Reduced flooding",
+        "Soil health improvement",
+        "Stormwater management",
+        "Stormwater retention (50-90%)",
+        "Urban agriculture potential",
+        "Wind velocity modulation"
+      ]
+    }
+  ],
+  "zone_analysis": {
+    "0": {
+      "zone_id": 0,
+      "n_pixels": 212,
+      "avg_heat_score": 50.97,
+      "max_heat_score": 95.47,
+      "top_contributing_factors": [
+        {
+          "feature": "LST",
+          "deviation": 0.8447,
+          "direction": "higher",
+          "hotspot_mean": 40.1785,
+          "city_mean": 36.0073
+        },
+        {
+          "feature": "UHI_Intensity",
+          "deviation": 0.8447,
+          "direction": "higher",
+          "hotspot_mean": 4.1785,
+          "city_mean": 0.0073
+        },
+        {
+          "feature": "UTFVI",
+          "deviation": 0.8447,
+          "direction": "higher",
+          "hotspot_mean": 0.0573,
+          "city_mean": -0.0524
+        },
+        {
+          "feature": "NDVI",
+          "deviation": -0.4586,
+          "direction": "lower",
+          "hotspot_mean": 0.2749,
+          "city_mean": 0.3886
+        },
+        {
+          "feature": "Green_Space_Density",
+          "deviation": -0.4087,
+          "direction": "lower",
+          "hotspot_mean": 0.1895,
+          "city_mean": 0.2747
+        }
+      ],
+      "vulnerabilities": {
+        "low_tree_cover": true
+      },
+      "centroid": {
+        "lat": 28.533833,
+        "lon": 77.134765
+      }
+    },
+    "1": {
+      "zone_id": 1,
+      "n_pixels": 170,
+      "avg_heat_score": 49.02,
+      "max_heat_score": 88.49,
+      "top_contributing_factors": [
+        {
+          "feature": "LST",
+          "deviation": 0.7546,
+          "direction": "higher",
+          "hotspot_mean": 39.7336,
+          "city_mean": 36.0073
+        },
+        {
+          "feature": "UHI_Intensity",
+          "deviation": 0.7546,
+          "direction": "higher",
+          "hotspot_mean": 3.7336,
+          "city_mean": 0.0073
+        },
+        {
+          "feature": "UTFVI",
+          "deviation": 0.7545,
+          "direction": "higher",
+          "hotspot_mean": 0.0456,
+          "city_mean": -0.0524
+        },
+        {
+          "feature": "Dist_Green",
+          "deviation": 0.2933,
+          "direction": "higher",
+          "hotspot_mean": 1253.5759,
+          "city_mean": 962.6677
+        },
+        {
+          "feature": "MNDWI",
+          "deviation": -0.2866,
+          "direction": "lower",
+          "hotspot_mean": -0.2381,
+          "city_mean": -0.1633
+        }
+      ],
+      "vulnerabilities": {},
+      "centroid": {
+        "lat": 28.68831,
+        "lon": 77.21386
+      }
+    },
+    "2": {
+      "zone_id": 2,
+      "n_pixels": 236,
+      "avg_heat_score": 49.45,
+      "max_heat_score": 82.89,
+      "top_contributing_factors": [
+        {
+          "feature": "LST",
+          "deviation": 0.7343,
+          "direction": "higher",
+          "hotspot_mean": 39.6336,
+          "city_mean": 36.0073
+        },
+        {
+          "feature": "UHI_Intensity",
+          "deviation": 0.7343,
+          "direction": "higher",
+          "hotspot_mean": 3.6336,
+          "city_mean": 0.0073
+        },
+        {
+          "feature": "UTFVI",
+          "deviation": 0.7343,
+          "direction": "higher",
+          "hotspot_mean": 0.043,
+          "city_mean": -0.0524
+        },
+        {
+          "feature": "NDVI",
+          "deviation": -0.4187,
+          "direction": "lower",
+          "hotspot_mean": 0.2848,
+          "city_mean": 0.3886
+        },
+        {
+          "feature": "Green_Space_Density",
+          "deviation": -0.3843,
+          "direction": "lower",
+          "hotspot_mean": 0.1946,
+          "city_mean": 0.2747
+        }
+      ],
+      "vulnerabilities": {
+        "low_tree_cover": true
+      },
+      "centroid": {
+        "lat": 28.541204,
+        "lon": 77.284283
+      }
+    },
+    "3": {
+      "zone_id": 3,
+      "n_pixels": 167,
+      "avg_heat_score": 51.17,
+      "max_heat_score": 88.42,
+      "top_contributing_factors": [
+        {
+          "feature": "LST",
+          "deviation": 0.8231,
+          "direction": "higher",
+          "hotspot_mean": 40.0718,
+          "city_mean": 36.0073
+        },
+        {
+          "feature": "UHI_Intensity",
+          "deviation": 0.8231,
+          "direction": "higher",
+          "hotspot_mean": 4.0718,
+          "city_mean": 0.0073
+        },
+        {
+          "feature": "UTFVI",
+          "deviation": 0.823,
+          "direction": "higher",
+          "hotspot_mean": 0.0545,
+          "city_mean": -0.0524
+        },
+        {
+          "feature": "Anthropogenic_Heat",
+          "deviation": 0.4783,
+          "direction": "higher",
+          "hotspot_mean": 0.1747,
+          "city_mean": 0.1019
+        },
+        {
+          "feature": "Impervious_Frac",
+          "deviation": 0.456,
+          "direction": "higher",
+          "hotspot_mean": 0.2874,
+          "city_mean": 0.1327
+        }
+      ],
+      "vulnerabilities": {
+        "low_tree_cover": true
+      },
+      "centroid": {
+        "lat": 28.681294,
+        "lon": 77.103885
+      }
+    },
+    "4": {
+      "zone_id": 4,
+      "n_pixels": 149,
+      "avg_heat_score": 51.06,
+      "max_heat_score": 99.57,
+      "top_contributing_factors": [
+        {
+          "feature": "LST",
+          "deviation": 0.8109,
+          "direction": "higher",
+          "hotspot_mean": 40.0116,
+          "city_mean": 36.0073
+        },
+        {
+          "feature": "UHI_Intensity",
+          "deviation": 0.8109,
+          "direction": "higher",
+          "hotspot_mean": 4.0116,
+          "city_mean": 0.0073
+        },
+        {
+          "feature": "UTFVI",
+          "deviation": 0.8109,
+          "direction": "higher",
+          "hotspot_mean": 0.0529,
+          "city_mean": -0.0524
+        },
+        {
+          "feature": "Impervious_Frac",
+          "deviation": 0.5188,
+          "direction": "higher",
+          "hotspot_mean": 0.3087,
+          "city_mean": 0.1327
+        },
+        {
+          "feature": "Building_Density",
+          "deviation": 0.4894,
+          "direction": "higher",
+          "hotspot_mean": 21.9003,
+          "city_mean": 12.1966
+        }
+      ],
+      "vulnerabilities": {
+        "high_imperviousness": true
+      },
+      "centroid": {
+        "lat": 28.688622,
+        "lon": 77.312135
+      }
+    }
+  },
+  "implementation_priority": [
+    {
+      "rank": 1,
+      "priority_score": 6.98,
+      "interventions": [
+        {
+          "name": "Street Trees",
+          "coverage_pct": 42.0
+        },
+        {
+          "name": "Urban Forests / Miyawaki Forests",
+          "coverage_pct": 45.0
+        },
+        {
+          "name": "Pocket Parks",
+          "coverage_pct": 20.0
+        },
+        {
+          "name": "Green Roofs",
+          "coverage_pct": 60.0
+        },
+        {
+          "name": "Vertical Gardens",
+          "coverage_pct": 25.0
+        },
+        {
+          "name": "Bioswales",
+          "coverage_pct": 54.0
+        },
+        {
+          "name": "Cool Pavements",
+          "coverage_pct": 70.0
+        },
+        {
+          "name": "High Albedo Materials",
+          "coverage_pct": 70.0
+        },
+        {
+          "name": "Lake Restoration",
+          "coverage_pct": 72.0
+        },
+        {
+          "name": "Jaali (Lattice Screen) Structures",
+          "coverage_pct": 57.0
+        },
+        {
+          "name": "Building Orientation Optimization",
+          "coverage_pct": 10.0
+        }
+      ],
+      "predicted_reduction": 0.64,
+      "cost": 3721681.0,
+      "feasibility": 0.741,
+      "co_benefits": [
+        "Aesthetic value",
+        "Aesthetic/architectural value",
+        "Air quality improvement",
+        "Better night visibility",
+        "Biodiversity habitat",
+        "Biodiversity hotspot",
+        "Biodiversity support",
+        "Building insulation (20-30% energy savings)",
+        "Carbon sequestration",
+        "Children's play area",
+        "Community gathering space",
+        "Cross ventilation",
+        "Cultural heritage preservation",
+        "Cultural/heritage value",
+        "Educational value",
+        "Extended roof lifespan",
+        "Flood buffering",
+        "Flood mitigation",
+        "Flood risk reduction",
+        "Food production potential",
+        "Groundwater recharge",
+        "Improved visual comfort",
+        "Low-tech solution",
+        "Lower street-level air temperature",
+        "Major carbon sequestration",
+        "Mental health benefits",
+        "Natural daylighting",
+        "No additional cost",
+        "Noise insulation",
+        "Noise reduction",
+        "Privacy screening",
+        "Property value increase",
+        "Recreational amenity",
+        "Recreational space",
+        "Reduced cooling energy",
+        "Reduced stormwater runoff",
+        "Reduced tire wear",
+        "Solar PV optimization",
+        "Stormwater infiltration",
+        "Stormwater management",
+        "Stormwater retention (50-90%)",
+        "Urban agriculture potential",
+        "Urban beautification",
+        "Water quality improvement",
+        "Wind velocity modulation"
+      ]
+    },
+    {
+      "rank": 2,
+      "priority_score": 6.85,
+      "interventions": [
+        {
+          "name": "Pocket Parks",
+          "coverage_pct": 36.0
+        },
+        {
+          "name": "Green Walls / Living Walls",
+          "coverage_pct": 45.0
+        },
+        {
+          "name": "Cool Pavements",
+          "coverage_pct": 9.0
+        },
+        {
+          "name": "Ponds / Retention Basins",
+          "coverage_pct": 78.0
+        },
+        {
+          "name": "Water Channels / Urban Canals",
+          "coverage_pct": 48.0
+        },
+        {
+          "name": "Fountains / Water Features",
+          "coverage_pct": 46.0
+        },
+        {
+          "name": "Wind Corridors",
+          "coverage_pct": 36.0
+        },
+        {
+          "name": "Building Spacing Optimization",
+          "coverage_pct": 43.0
+        },
+        {
+          "name": "Artificial Shading Structures",
+          "coverage_pct": 69.0
+        },
+        {
+          "name": "Jaali (Lattice Screen) Structures",
+          "coverage_pct": 20.0
+        },
+        {
+          "name": "Building Orientation Optimization",
+          "coverage_pct": 69.0
+        },
+        {
+          "name": "Ventilation Corridors",
+          "coverage_pct": 50.0
+        }
+      ],
+      "predicted_reduction": 0.33,
+      "cost": 702554.0,
+      "feasibility": 0.638,
+      "co_benefits": [
+        "Aesthetic enhancement",
+        "Aesthetic improvement",
+        "Aesthetic value",
+        "Aesthetic/architectural value",
+        "Aesthetic/heritage value",
+        "Air quality at pedestrian level",
+        "Air quality improvement",
+        "Aquaculture potential",
+        "Better daylighting",
+        "Better night visibility",
+        "Building cooling load reduction",
+        "Children's play area",
+        "Community gathering space",
+        "Cross ventilation",
+        "Cultural heritage preservation",
+        "Green belt potential",
+        "Immediate effect",
+        "Improved air quality",
+        "Improved living conditions",
+        "Linear green corridor potential",
+        "Lower street-level air temperature",
+        "Microclimate regulation",
+        "Natural daylighting",
+        "Natural ventilation",
+        "Natural ventilation for buildings",
+        "No additional cost",
+        "Noise buffering",
+        "Noise reduction",
+        "Pedestrian comfort",
+        "Pedestrian/cyclist pathway",
+        "Privacy screening",
+        "Property value increase",
+        "Psychological cooling",
+        "Rain shelter",
+        "Reduced AC dependency",
+        "Reduced canyon heating effect",
+        "Reduced stormwater runoff",
+        "Reduced tire wear",
+        "Solar PV optimization",
+        "Solar energy generation (if PV panels)",
+        "Stormwater conveyance",
+        "Stormwater infiltration",
+        "Stormwater retention",
+        "Tourism attraction",
+        "Transportation (some cases)",
+        "UV protection",
+        "White noise (masks traffic)",
+        "Wind velocity modulation"
+      ]
+    },
+    {
+      "rank": 3,
+      "priority_score": 6.53,
+      "interventions": [
+        {
+          "name": "Street Trees",
+          "coverage_pct": 74.0
+        },
+        {
+          "name": "Green Walls / Living Walls",
+          "coverage_pct": 79.0
+        },
+        {
+          "name": "Urban Agriculture",
+          "coverage_pct": 41.0
+        },
+        {
+          "name": "Cool Pavements",
+          "coverage_pct": 34.0
+        },
+        {
+          "name": "High Albedo Materials",
+          "coverage_pct": 21.0
+        },
+        {
+          "name": "Lake Restoration",
+          "coverage_pct": 27.0
+        },
+        {
+          "name": "Urban Wetlands",
+          "coverage_pct": 25.0
+        },
+        {
+          "name": "Ponds / Retention Basins",
+          "coverage_pct": 8.0
+        },
+        {
+          "name": "Water Channels / Urban Canals",
+          "coverage_pct": 39.0
+        },
+        {
+          "name": "Wind Corridors",
+          "coverage_pct": 16.0
+        },
+        {
+          "name": "Artificial Shading Structures",
+          "coverage_pct": 26.0
+        }
+      ],
+      "predicted_reduction": 0.45,
+      "cost": 1743174.0,
+      "feasibility": 0.682,
+      "co_benefits": [
+        "Aesthetic improvement",
+        "Aesthetic value",
+        "Aesthetic/heritage value",
+        "Air quality at pedestrian level",
+        "Air quality improvement",
+        "Aquaculture potential",
+        "Better night visibility",
+        "Biodiversity habitat",
+        "Biodiversity support",
+        "Building cooling load reduction",
+        "Carbon sequestration",
+        "Community engagement",
+        "Cultural/heritage value",
+        "Educational value",
+        "Flood attenuation",
+        "Flood buffering",
+        "Food security",
+        "Groundwater recharge",
+        "Immediate effect",
+        "Improved air quality",
+        "Improved visual comfort",
+        "Income generation",
+        "Linear green corridor potential",
+        "Low-tech solution",
+        "Lower street-level air temperature",
+        "Mental health benefits",
+        "Microclimate regulation",
+        "Natural ventilation for buildings",
+        "Natural water filtration",
+        "Noise reduction",
+        "Pedestrian comfort",
+        "Rain shelter",
+        "Recreational amenity",
+        "Reduced AC dependency",
+        "Reduced cooling energy",
+        "Reduced stormwater runoff",
+        "Reduced tire wear",
+        "Solar energy generation (if PV panels)",
+        "Stormwater conveyance",
+        "Stormwater management",
+        "Stormwater retention",
+        "Transportation (some cases)",
+        "UV protection"
+      ]
+    },
+    {
+      "rank": 4,
+      "priority_score": 6.49,
+      "interventions": [
+        {
+          "name": "Street Trees",
+          "coverage_pct": 75.0
+        },
+        {
+          "name": "Reflective Roof Coatings",
+          "coverage_pct": 39.0
+        },
+        {
+          "name": "Cool Pavements",
+          "coverage_pct": 37.0
+        },
+        {
+          "name": "Reflective Concrete",
+          "coverage_pct": 76.0
+        },
+        {
+          "name": "Urban Wetlands",
+          "coverage_pct": 55.0
+        },
+        {
+          "name": "Ponds / Retention Basins",
+          "coverage_pct": 37.0
+        },
+        {
+          "name": "Rain Gardens",
+          "coverage_pct": 70.0
+        },
+        {
+          "name": "Permeable Pavements",
+          "coverage_pct": 35.0
+        },
+        {
+          "name": "Artificial Shading Structures",
+          "coverage_pct": 22.0
+        },
+        {
+          "name": "Jaali (Lattice Screen) Structures",
+          "coverage_pct": 33.0
+        },
+        {
+          "name": "Ventilation Corridors",
+          "coverage_pct": 37.0
+        },
+        {
+          "name": "Impervious Surface Reduction",
+          "coverage_pct": 56.0
+        }
+      ],
+      "predicted_reduction": 0.44,
+      "cost": 777108.0,
+      "feasibility": 0.737,
+      "co_benefits": [
+        "Aesthetic value",
+        "Aesthetic/architectural value",
+        "Air quality improvement",
+        "Aquaculture potential",
+        "Beautification",
+        "Better night visibility",
+        "Biodiversity habitat",
+        "Biodiversity support",
+        "Carbon sequestration",
+        "Community-applied (unskilled labor)",
+        "Cultural heritage preservation",
+        "Durable surface",
+        "Flood attenuation",
+        "Green belt potential",
+        "Groundwater recharge",
+        "Immediate effect",
+        "Lower maintenance than asphalt",
+        "Lower street-level air temperature",
+        "Mental health benefits",
+        "Microclimate regulation",
+        "Natural water filtration",
+        "Noise buffering",
+        "Pedestrian/cyclist pathway",
+        "Pollutant removal",
+        "Privacy screening",
+        "Quick implementation",
+        "Rain shelter",
+        "Reduced flooding",
+        "Reduced lighting needs (reflective)",
+        "Reduced stormwater runoff",
+        "Reduced tire noise",
+        "Reduced tire wear",
+        "Soil health improvement",
+        "Solar energy generation (if PV panels)",
+        "Stormwater infiltration",
+        "Stormwater management",
+        "Stormwater retention",
+        "Traditional practice in India",
+        "UV protection",
+        "Very low cost",
+        "Wind velocity modulation"
+      ]
+    },
+    {
+      "rank": 5,
+      "priority_score": 6.36,
+      "interventions": [
+        {
+          "name": "Street Trees",
+          "coverage_pct": 79.0
+        },
+        {
+          "name": "Urban Forests / Miyawaki Forests",
+          "coverage_pct": 56.0
+        },
+        {
+          "name": "Pocket Parks",
+          "coverage_pct": 52.0
+        },
+        {
+          "name": "Green Walls / Living Walls",
+          "coverage_pct": 12.0
+        },
+        {
+          "name": "Vertical Gardens",
+          "coverage_pct": 23.0
+        },
+        {
+          "name": "Reflective Roof Coatings",
+          "coverage_pct": 71.0
+        },
+        {
+          "name": "High Albedo Materials",
+          "coverage_pct": 78.0
+        },
+        {
+          "name": "Rain Gardens",
+          "coverage_pct": 39.0
+        },
+        {
+          "name": "Fountains / Water Features",
+          "coverage_pct": 72.0
+        },
+        {
+          "name": "Impervious Surface Reduction",
+          "coverage_pct": 22.0
+        }
+      ],
+      "predicted_reduction": 0.77,
+      "cost": 290940.0,
+      "feasibility": 0.785,
+      "co_benefits": [
+        "Aesthetic enhancement",
+        "Aesthetic improvement",
+        "Aesthetic value",
+        "Air quality at pedestrian level",
+        "Air quality improvement",
+        "Beautification",
+        "Biodiversity hotspot",
+        "Biodiversity support",
+        "Building cooling load reduction",
+        "Carbon sequestration",
+        "Children's play area",
+        "Community gathering space",
+        "Community-applied (unskilled labor)",
+        "Educational value",
+        "Flood mitigation",
+        "Food production potential",
+        "Groundwater recharge",
+        "Improved visual comfort",
+        "Low-tech solution",
+        "Major carbon sequestration",
+        "Mental health benefits",
+        "Noise reduction",
+        "Pollutant removal",
+        "Property value increase",
+        "Psychological cooling",
+        "Quick implementation",
+        "Recreational space",
+        "Reduced cooling energy",
+        "Reduced flooding",
+        "Soil health improvement",
+        "Stormwater infiltration",
+        "Stormwater management",
+        "Tourism attraction",
+        "Traditional practice in India",
+        "Urban beautification",
+        "Very low cost",
+        "White noise (masks traffic)"
+      ]
+    }
+  ]
+}

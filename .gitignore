@@ -1,0 +1,55 @@
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+*.so
+
+# ── Virtual Environments ──
+venv/
+env/
+.venv/
+
+# ── IDE ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ── Data (large files — download from Google Drive) ──
+data/raw/*.tif
+data/raw/*.csv
+data/intermediate/*.tif
+data/processed/*.tif
+data/final/*.csv
+data/final/*.json
+!data/final/README.md
+!data/metadata/data_dictionary.json
+
+# ── Models (large binaries) ──
+models/*.pkl
+models/*.h5
+models/*.pt
+models/*.onnx
+
+# ── Outputs ──
+outputs/maps/*.tif
+outputs/maps/*.png
+outputs/reports/*.pdf
+
+# ── Jupyter ──
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# ── Logs ──
+*.log
